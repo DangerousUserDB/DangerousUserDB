@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ========================================================================*/
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
