@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ========================================================================*/
 
+require __DIR__ . '/vendor/autoload.php';
+
 // IMPORTANT CONFIGURATION!!!!!
 
 $location = "/var/www/discord/"; // Replace this with your document root.
