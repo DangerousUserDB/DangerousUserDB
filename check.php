@@ -37,7 +37,7 @@ curl_close($curl);
 
 $api = json_decode($resp, true);
 
-$r_discord_username = XSS($api["username"]);
+$r_discord_username = htmlspecialchars($api["username"]);
 
     echo "<br>";
     echo "<h2>User Profile - ${r_discord_username}</h2>";
