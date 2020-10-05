@@ -70,11 +70,11 @@ $location = "/var/www/discord/"; // Replace this with your document root.
             <i class="fa fa-angle-down" aria-hidden="true"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1"> <!-- w-200 = width: 20rem (200px) -->
-            <a href="#" class="dropdown-item">Report</a>
-            <a href="#" class="dropdown-item">About Us</a>
+            <a href="/report" class="dropdown-item">Report</a>
+            <a href="/about" class="dropdown-item">About Us</a>
             <div class="dropdown-divider"></div>
             <div class="dropdown-content">
-              <form action="..." method="...">
+              <form action="/check" method="get">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="1234..." required="required">
                 </div>
