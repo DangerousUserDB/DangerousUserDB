@@ -22,3 +22,5 @@ limitations under the License.
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/js/halfmoon.min.js"></script>
 </head>
 <body>
+<center>
+<h1>Dangerous Discord User Database</h1>
