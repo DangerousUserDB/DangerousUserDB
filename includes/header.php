@@ -88,6 +88,3 @@ $location = "/var/www/discord/"; // Replace this with your document root.
 
     <!-- Content wrapper -->
     <div class="content-wrapper">
-      ...
-    </div>
-  </div>
