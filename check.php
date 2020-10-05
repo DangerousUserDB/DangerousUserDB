@@ -39,7 +39,11 @@ $api = json_decode($resp, true);
 
 $r_discord_username = XSS($api["username"]);
 
-if(isset($r_discord_username)){
+if($r_discord_username == ""){
+    header("Location: /?notfound=true");
+    die();
+}
+
     echo "<br>";
     echo "<h2>User Profile - ${r_discord_username}</h2>";
     ?>
@@ -56,13 +60,3 @@ if(isset($r_discord_username)){
     More
   </div>
 </div>
-<?php
-}else{
-    ?>
-      <h4 class="alert-heading">Oh no!</h4>
-        User was not found.
-        </div>
-    <?php
-}
-
-?>
