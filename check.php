@@ -29,7 +29,7 @@ curl_setopt_array($curl, [
     CURLOPT_URL => "https://discord.com/api/v8/users/${id}",
     CURLOPT_USERAGENT => 'Dangerous User DB'
 ]);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+curl_setopt($curl, CURLOPT_HTTPHEADER, array(
     "Authorization: Bot ${discord_token}",
 ));
 $resp = curl_exec($curl);
