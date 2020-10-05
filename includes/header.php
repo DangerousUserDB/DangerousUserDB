@@ -27,13 +27,6 @@ limitations under the License.
 <div class="page-wrapper with-navbar">
     <!-- Navbar (immediate child of the page wrapper) -->
     <nav class="navbar">
-      <!-- Navbar content (with toggle sidebar button) -->
-      <div class="navbar-content">
-        <button class="btn btn-action" type="button">
-          <i class="fa fa-bars" aria-hidden="true"></i>
-          <span class="sr-only">Toggle sidebar</span> <!-- sr-only = show only on screen readers -->
-        </button>
-      </div>
       <!-- Navbar brand -->
       <a href="/" class="navbar-brand">
         <img src="https://images.fineartamerica.com/images-medium-large/international-biohazard-symbol-.jpg" />
@@ -59,15 +52,15 @@ limitations under the License.
             <i class="fa fa-angle-down" aria-hidden="true"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1"> <!-- w-200 = width: 20rem (200px) -->
-            <a href="#" class="dropdown-item">Docs</a>
-            <a href="#" class="dropdown-item">Products</a>
+            <a href="#" class="dropdown-item">Report</a>
+            <a href="#" class="dropdown-item">About Us</a>
             <div class="dropdown-divider"></div>
             <div class="dropdown-content">
               <form action="..." method="...">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Email address" required="required">
+                  <input type="text" class="form-control" placeholder="1234..." required="required">
                 </div>
-                <button class="btn btn-primary btn-block" type="submit">Sign up</button>
+                <button class="btn btn-primary btn-block" type="submit">Check ID</button>
               </form>
             </div>
           </div>
