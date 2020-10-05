@@ -19,6 +19,16 @@ include "includes/header.php";
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+$servername = $_ENV['MYSQL_SERVER'];
+$username = $_ENV["MYSQL_USERNAME"];
+$password = $_ENV["MYSQL_PASSWORD"];
+$dbname = $_ENV["MYSQL_DATABASE"];
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 $id = $_GET["id"];
 $discord_token = $_ENV['BOT_TOKEN'];
 
@@ -42,6 +52,19 @@ if(!isset($r_discord_username)){
 }
 
 $r_discord_username = xss($api["username"]);
+$sql_discord = $conn -> real_escape_string($r_discord_username);
+$sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
+$result = $conn->query($sql);
+
+$times = 0;
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $times = $times + 1;
+    }
+}
+
+
 
     echo "<br>";
     echo "<h2>User Profile - ${r_discord_username}</h2>";
@@ -49,7 +72,7 @@ $r_discord_username = xss($api["username"]);
     <div class="card">
         <h2 class="card-title">
         <?php
-    echo "<h3>Null</h3>"
+    echo "<h3>${times} - Total Reports</h3>"
     ?>
   </h2>
   <p>
