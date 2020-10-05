@@ -39,12 +39,7 @@ $api = json_decode($resp, true);
 
 $r_discord_username = $api["username"];
 
-if(!isset($r_discord_username)){
-    ?>
-    <br>
-    <h2>That User Does Not Exist</h2>
-    <?php
-}else{
-    echo $r_discord_username;
-}
+
+echo $r_discord_username;
+
 ?>
