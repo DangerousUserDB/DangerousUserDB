@@ -16,4 +16,5 @@ limitations under the License.
 
 include "includes/header.php";
 ?>
-<h1>Welcome to the Dangerous Discord User Database!</h1>
+<h1>Remove Danerous Users From Your Server - Fast</h1>
+<h3>With our robust API, you will never have to worry about raids again</h3>
