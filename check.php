@@ -37,9 +37,32 @@ curl_close($curl);
 
 $api = json_decode($resp, true);
 
-$r_discord_username = $api["username"];
+$r_discord_username = XSS($api["username"]);
 
-
-echo $r_discord_username;
+if(isset($r_discord_username)){
+    echo "<br>";
+    echo "<h2>User Profile - ${r_discord_username}</h2>";
+    ?>
+    <div class="card">
+        <h2 class="card-title">
+        <?php
+    echo "<h3>Null</h3>"
+    ?>
+  </h2>
+  <p>
+    The weather forecast didn't say that, but the steel plate in his hip did. He had learned over the years to trust his hip over the weatherman. It was going to rain, so he better get outside and prepare...
+  </p>
+  <div class="text-right"> <!-- text-right = text-align: right -->
+    More
+  </div>
+</div>
+<?php
+}else{
+    ?>
+      <h4 class="alert-heading">Oh no!</h4>
+        User was not found.
+        </div>
+    <?php
+}
 
 ?>
