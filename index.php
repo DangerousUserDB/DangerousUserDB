@@ -16,3 +16,4 @@ limitations under the License.
 
 include "includes/header.php";
 ?>
+<h1>Welcome to the Dangerous Discord User Database!</h1>

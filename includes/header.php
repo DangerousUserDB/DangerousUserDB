@@ -55,7 +55,10 @@ $location = "/var/www/discord/"; // Replace this with your document root.
                 echo '<li class="nav-item">';
             }
         ?>
-          <a href="#" class="nav-link">About Us</a>
+          <a href="/about" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a href="//riverside.rocks/community" class="nav-link">Community</a>
         </li>
       </ul>
       <form class="form-inline d-none d-md-flex ml-auto" action="..." method="..."> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
@@ -72,6 +75,7 @@ $location = "/var/www/discord/"; // Replace this with your document root.
           <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1"> <!-- w-200 = width: 20rem (200px) -->
             <a href="/report" class="dropdown-item">Report</a>
             <a href="/about" class="dropdown-item">About Us</a>
+            <a href="//riverside.rocks/community" class="dropdown-item">Community</a>
             <div class="dropdown-divider"></div>
             <div class="dropdown-content">
               <form action="/check" method="get">
