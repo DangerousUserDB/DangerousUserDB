@@ -15,8 +15,6 @@ limitations under the License.
 ========================================================================*/
 
 require 'vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 // IMPORTANT CONFIGURATION!!!!!
 

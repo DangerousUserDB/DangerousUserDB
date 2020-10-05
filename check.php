@@ -16,6 +16,9 @@ limitations under the License.
 
 include "includes/header.php";
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 $id = $_GET["id"];
 $discord_token = $_ENV['BOT_TOKEN'];
 
