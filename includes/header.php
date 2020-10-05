@@ -23,4 +23,27 @@ limitations under the License.
 </head>
 <body>
 <center>
-<h1>Dangerous Discord User Database</h1>
+<div class="page-wrapper with-navbar">
+    <!-- Navbar (immediate child of the page wrapper) -->
+    <nav class="navbar">
+      <!-- Navbar content (with toggle sidebar button) -->
+      <div class="navbar-content">
+        <button class="btn btn-action" type="button">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+          <span class="sr-only">Toggle sidebar</span> <!-- sr-only = show only on screen readers -->
+        </button>
+      </div>
+      <!-- Navbar brand -->
+      <a href="/" class="navbar-brand">
+        Dangerous Discord User Database
+      </a>
+      <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
+        <li class="nav-item active">
+          <a href="#" class="nav-link">Report User</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">About Us</a>
+        </li>
+      </ul>
+      <div>
+      <br>
