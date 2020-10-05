@@ -28,6 +28,72 @@ $location = "/var/www/discord/"; // Replace this with your document root.
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/js/halfmoon.min.js"></script>
 </head>
 <body>
+<style>
+/*
+
+This is the custom CSS for HalfMoon
+
+*/
+/* 
+  Global scope 
+*/
+:root {
+    /* Change primary color from blue to indigo */
+  
+    --primary-color: var(--indigo-color);                                     /* Before: var(--blue-color) */
+    --primary-color-light: var(--indigo-color-light);                         /* Before: var(--blue-color-light) */
+    --primary-color-very-light: var(--indigo-color-very-light);               /* Before: var(--blue-color-very-light) */
+    --primary-color-dark: var(--indigo-color-dark);                           /* Before: var(--blue-color-dark) */
+    --primary-color-very-dark: var(--indigo-color-very-dark);                 /* Before: var(--blue-color-very-dark) */
+    --primary-box-shadow-color: var(--indigo-box-shadow-color);               /* Before: var(--blue-box-shadow-color) */
+    --primary-box-shadow-color-darker: var(--indigo-box-shadow-color-darker); /* Before: var(--blue-box-shadow-color-darker) */
+    --text-color-on-primary-color-bg: var(--text-color-on-indigo-color-bg);   /* Before: var(--text-color-on-blue-color-bg) */
+  
+    /* Card */
+  
+    --card-border-radius: 1.2rem;                           /* Before: var(--base-border-radius) */
+  
+    /* Card (light mode only) */
+  
+    --lm-card-bg-image: linear-gradient(#f7f7f7, #ced6e0);  /* Before: none */
+    --lm-card-border-color: #ffffff;                        /* Before: rgba(0, 0, 0, 0.2) */
+    --lm-card-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);    /* Before: none */
+  
+    /* Card (dark mode only) */
+  
+    --dm-card-bg-image: linear-gradient(#191c20, #111417);  /* Before: none */
+    --dm-card-border-color: rgba(255, 255, 255, 0.1);       /* Before: rgba(0, 0, 0, 0.2) */
+    --dm-card-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);     /* Before: none */
+  
+    /* Input (light mode only) */
+  
+    --lm-input-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);  /* Before: none */
+  
+    /* Input (dark mode only) */
+  
+    --dm-input-box-shadow: var(--lm-input-box-shadow);      /* Before: none */
+  
+    /* Primary button (light mode only) */
+  
+    --lm-button-primary-bg-image: linear-gradient(var(--primary-color), var(--primary-color-dark));             /* Before: none */
+    --lm-button-primary-bg-image-hover: linear-gradient(var(--primary-color-light), var(--primary-color-dark)); /* Before: none */
+  
+    /* Primary button (dark mode only) */
+  
+    --dm-button-primary-bg-image: linear-gradient(var(--primary-color), var(--primary-color-dark));             /* Before: none */
+    --dm-button-primary-bg-image-hover: linear-gradient(var(--primary-color-light), var(--primary-color-dark)); /* Before: none */
+  }
+  
+  /* 
+    Local scope 
+    ~ This way, only the primary button's height and border width is affected.
+    ~ Default button remains the same.
+  */
+  .btn-primary {
+    --button-height: 3.6rem;  /* Before: 3.2rem (32px) */
+    --button-border-width: 0; /* Before: var(--base-border-width) */
+  }
+</style>
 <center>
 <div class="page-wrapper with-navbar">
     <!-- Navbar (immediate child of the page wrapper) -->
