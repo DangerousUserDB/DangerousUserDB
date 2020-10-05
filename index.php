@@ -18,3 +18,29 @@ include "includes/header.php";
 ?>
 <h1>Remove Danerous Users From Your Server - Fast</h1>
 <h5>With our robust API, you will never have to worry about raids again</h5>
+<div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+  <div class="card">
+    <h2 class="card-title">
+      Get Started
+    </h2>
+    <p class="text-muted">
+        Create an account, get an API, and add our bot to your Discord server.
+    </p>
+    <div class="text-right"> <!-- text-right = text-align: right -->
+      <a href="/login" class="btn">Sign Up</a>
+    </div>
+  </div>
+</div>
+<div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+  <div class="card">
+    <h2 class="card-title">
+      Report a user
+    </h2>
+    <p class="text-muted">
+        Raided? Report a user now.
+    </p>
+    <div class="text-right"> <!-- text-right = text-align: right -->
+      <a href="/report" class="btn">Report</a>
+    </div>
+  </div>
+</div>
