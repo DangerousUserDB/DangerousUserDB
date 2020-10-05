@@ -46,5 +46,36 @@ limitations under the License.
           <a href="#" class="nav-link">About Us</a>
         </li>
       </ul>
-      <div>
-      <br>
+      <form class="form-inline d-none d-md-flex ml-auto" action="..." method="..."> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+        <input type="text" class="form-control" placeholder="Email address" required="required">
+        <button class="btn btn-primary" type="submit">Sign up</button>
+      </form>
+      <!-- Navbar content (with the dropdown menu) -->
+      <div class="navbar-content d-md-none ml-auto"> <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+        <div class="dropdown with-arrow">
+          <button class="btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn-1">
+            Menu
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1"> <!-- w-200 = width: 20rem (200px) -->
+            <a href="#" class="dropdown-item">Docs</a>
+            <a href="#" class="dropdown-item">Products</a>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-content">
+              <form action="..." method="...">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Email address" required="required">
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">Sign up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+      ...
+    </div>
+  </div>
