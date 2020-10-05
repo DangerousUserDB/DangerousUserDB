@@ -59,8 +59,8 @@ $location = "/var/www/discord/"; // Replace this with your document root.
         </li>
       </ul>
       <form class="form-inline d-none d-md-flex ml-auto" action="..." method="..."> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
-        <input type="text" class="form-control" placeholder="Email address" required="required">
-        <button class="btn btn-primary" type="submit">Sign up</button>
+        <input type="text" class="form-control" placeholder="1234..." required="required">
+        <button class="btn btn-primary" type="submit">Check ID</button>
       </form>
       <!-- Navbar content (with the dropdown menu) -->
       <div class="navbar-content d-md-none ml-auto"> <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
