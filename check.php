@@ -30,7 +30,7 @@ curl_setopt_array($curl, [
     CURLOPT_USERAGENT => 'Dangerous User DB'
 ]);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "Authorization: Bot ${discord_token}"
+    "Authorization: Bot ${discord_token}",
 ));
 $resp = curl_exec($curl);
 curl_close($curl);
