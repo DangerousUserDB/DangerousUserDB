@@ -18,6 +18,9 @@ include "includes/header.php";
 ?>
 <h1>Remove Danerous Users From Your Server - Fast</h1>
 <h5>With our robust API, you will never have to worry about raids again</h5>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm">
 <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
   <div class="card">
     <h2 class="card-title">
@@ -31,6 +34,8 @@ include "includes/header.php";
     </div>
   </div>
 </div>
+</div>
+<div class="col-sm">
 <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
   <div class="card">
     <h2 class="card-title">
@@ -43,4 +48,5 @@ include "includes/header.php";
       <a href="/report" class="btn">Report</a>
     </div>
   </div>
+</div>
 </div>
