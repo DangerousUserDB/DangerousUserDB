@@ -39,11 +39,6 @@ $api = json_decode($resp, true);
 
 $r_discord_username = XSS($api["username"]);
 
-if($r_discord_username == ""){
-    header("Location: /?notfound=true");
-    die();
-}
-
     echo "<br>";
     echo "<h2>User Profile - ${r_discord_username}</h2>";
     ?>
