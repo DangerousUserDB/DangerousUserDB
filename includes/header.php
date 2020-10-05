@@ -20,8 +20,8 @@ require 'vendor/autoload.php';
 
 $location = "/var/www/discord/"; // Replace this with your document root.
 
-function XSS($text) {
-  echo htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+function xss($text) {
+  return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
 
 ?>

@@ -37,7 +37,11 @@ curl_close($curl);
 
 $api = json_decode($resp, true);
 
-$r_discord_username = htmlspecialchars($api["username"]);
+if(!isset($r_discord_username)){
+    header("Location: /?notfound=true");
+}
+
+$r_discord_username = xss($api["username"]);
 
     echo "<br>";
     echo "<h2>User Profile - ${r_discord_username}</h2>";
