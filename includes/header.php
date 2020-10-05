@@ -14,6 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ========================================================================*/
 
+// IMPORTANT CONFIGURATION!!!!!
+
+$location = "/var/www/discord/"; // Replace this with your document root.
+
 
 ?>
 <!DOCTYPE html>
@@ -33,10 +37,24 @@ limitations under the License.
         Dangerous Discord User Database
       </a>
       <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
-        <li class="nav-item active">
-          <a href="#" class="nav-link">Report User</a>
+        <?php
+        $file = __FILE__;
+        $path = $location . $file;
+        if($path == $location . "report.php"){
+            echo '<li class="nav-item active">';
+        }else{
+            echo '<li class="nav-item">';
+        }
+        ?>
+          <a href="/report" class="nav-link">Report User</a>
         </li>
-        <li class="nav-item">
+        <?php
+            if($path == $location . "about.php"){
+                echo '<li class="nav-item active">';
+            }else{
+                echo '<li class="nav-item">';
+            }
+        ?>
           <a href="#" class="nav-link">About Us</a>
         </li>
       </ul>
