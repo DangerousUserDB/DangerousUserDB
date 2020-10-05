@@ -35,6 +35,7 @@ limitations under the License.
       </div>
       <!-- Navbar brand -->
       <a href="/" class="navbar-brand">
+        <img src="https://images.fineartamerica.com/images-medium-large/international-biohazard-symbol-.jpg" />
         Dangerous Discord User Database
       </a>
       <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->

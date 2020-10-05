@@ -16,4 +16,3 @@ limitations under the License.
 
 include "includes/header.php";
 ?>
-<i>The place to report harmful discord users</i>
