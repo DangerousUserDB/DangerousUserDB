@@ -62,7 +62,7 @@ $times = 0;
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        $times = $times + 1;
+        $times++;
     }
 }
 
