@@ -19,6 +19,8 @@ require 'vendor/autoload.php';
 // IMPORTANT CONFIGURATION!!!!!
 
 $location = "/var/www/discord/"; // Replace this with your document root.
+$font_awesome_kit = '<script src="https://kit.fontawesome.com/281a5c53f1.js" crossorigin="anonymous"></script>';
+
 
 function xss($text) {
   return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
@@ -27,7 +29,9 @@ function xss($text) {
 ?>
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<?php
+echo $font_awesome_kit;
+?>
 <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/css/halfmoon-variables.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/js/halfmoon.min.js"></script>
 </head>
