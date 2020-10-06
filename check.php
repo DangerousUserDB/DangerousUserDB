@@ -47,9 +47,11 @@ curl_close($curl);
 
 $api = json_decode($resp, true);
 
+/*
 if(!isset($r_discord_username)){
     header("Location: /?notfound=true");
 }
+*/
 
 $r_discord_username = xss($api["username"]);
 $sql_discord = $conn -> real_escape_string($r_discord_username);
