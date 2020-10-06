@@ -16,7 +16,7 @@ limitations under the License.
 
 include "includes/header.php";
 
-$Loader = new josegonzalez\Dotenv\Loader('/.env');
+$Loader = new josegonzalez\Dotenv\Loader('.env');
 $Loader->parse();
 $Loader->toEnv();
 
