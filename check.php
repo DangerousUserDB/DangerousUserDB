@@ -16,8 +16,9 @@ limitations under the License.
 
 include "includes/header.php";
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+$Loader = new josegonzalez\Dotenv\Loader('/.env');
+$Loader->parse();
+$Loader->toEnv();
 
 $servername = $_ENV['MYSQL_SERVER'];
 $username = $_ENV["MYSQL_USERNAME"];
