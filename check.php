@@ -58,8 +58,6 @@ $sql_discord = $conn -> real_escape_string($_GET["id"]);
 $sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
 $result = $conn->query($sql);
 
-echo $sql_discord;
-
 $times = 0;
 
 if ($result->num_rows > 0) {
@@ -68,16 +66,18 @@ if ($result->num_rows > 0) {
     }
 }
 
+$message = "Failed to load the data. Please reload.";
+
 if($times == 0){
-    $symbol = '<i class="fas fa-check-circle" style="color:green"></i>';
+    $symbol = '<i class="fas fa-check-circle" style="color:green;font-size:18px;"></i>';
     $message = "Good news, this user looks fine.";
 }
 
 if($times > 1 && $times < 3){
-    $symbol = '<i class="fas fa-exclamation-triangle" style="color:yellow"></i>';
+    $symbol = '<i class="fas fa-exclamation-triangle" style="color:yellowfont-size:18px;"></i>';
     $message = "Keep your eyes on this user, we have at least one report.";
 }else if($times > 3 && $times < 5){
-    $symbol = '<i class="fas fa-exclamation-circle" style="color:red"></i>';
+    $symbol = '<i class="fas fa-exclamation-circle" style="color:redfont-size:18px;"></i>';
     $message = "This user is likey a malicous user, they have more than 3 reports.";
 }else if($times > 5){
     $symbol = '<i class="fas fa-radiation-alt" style="color:red"></i>';
