@@ -92,7 +92,6 @@ if($times > 1 && $times < 3){
         <?php
     echo "<h3>${times} - Total Reports</h3><br>${symbol}"
     ?>
-  </h2>
   <p>
     <?php
     echo $message;
