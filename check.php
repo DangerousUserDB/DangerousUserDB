@@ -66,6 +66,22 @@ if ($result->num_rows > 0) {
     }
 }
 
+if($times == 0){
+    $symbol = '<i class="fas fa-check-circle" style="color:green"></i>';
+    $message = "Good news, this user looks fine.";
+}
+
+if($times > 1 && $times < 3){
+    $symbol = '<i class="fas fa-exclamation-triangle" style="color:yellow"></i>';
+    $message = "Keep your eyes on this user, we have at least one report.";
+}else if($times > 3 && $times < 5){
+    $symbol = '<i class="fas fa-exclamation-circle" style="color:red"></i>';
+    $message = "This user is likey a malicous user, they have more than 3 reports.";
+}else if($times > 5){
+    $symbol = '<i class="fas fa-radiation-alt" style="color:red"></i>';
+    $message = "This user is a malicous user, remove them from your server as soon as possible.";
+
+}
 
 
     echo "<br>";
@@ -74,11 +90,13 @@ if ($result->num_rows > 0) {
     <div class="card">
         <h2 class="card-title">
         <?php
-    echo "<h3>${times} - Total Reports</h3>"
+    echo "<h3>${times} - Total Reports</h3><br>${symbol}"
     ?>
   </h2>
   <p>
-    The weather forecast didn't say that, but the steel plate in his hip did. He had learned over the years to trust his hip over the weatherman. It was going to rain, so he better get outside and prepare...
+    <?php
+    echo $message;
+    ?>
   </p>
   <div class="text-right"> <!-- text-right = text-align: right -->
     More
