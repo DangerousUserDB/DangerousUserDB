@@ -58,6 +58,8 @@ $sql_discord = $conn -> real_escape_string($r_discord_username);
 $sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
 $result = $conn->query($sql);
 
+echo $sql_discord;
+
 $times = 0;
 
 if ($result->num_rows > 0) {
