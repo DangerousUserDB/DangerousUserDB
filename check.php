@@ -54,7 +54,7 @@ if(!isset($r_discord_username)){
 */
 
 $r_discord_username = xss($api["username"]);
-$sql_discord = $conn -> real_escape_string($r_discord_username);
+$sql_discord = $conn -> real_escape_string($_GET["id"]);
 $sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
 $result = $conn->query($sql);
 
