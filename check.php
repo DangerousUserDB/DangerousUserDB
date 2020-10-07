@@ -67,12 +67,13 @@ if ($result->num_rows > 0) {
     }
 }
 
-if($api["username"] == ""){
-    die(header("Location: /?notfound=true"));
-}
+
 
 
 if($times == "0"){
+    if($api["username"] == ""){
+        die(header("Location: /?notfound=true"));
+    }
     $symbol = '<i class="fas fa-check-circle" style="color:green;font-size:18px;"></i>'; 
     $message = "All clear! Nothing looks wrong!";
 }else{
