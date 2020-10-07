@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-if($r_discord_username == ""){
+if($api["username"] == ""){
     die(header("Location: /?notfound=true"));
 }
 
