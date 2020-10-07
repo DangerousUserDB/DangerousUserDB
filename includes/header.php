@@ -70,8 +70,8 @@ echo $font_awesome_kit;
             <a href="//riverside.rocks/community" class="nav-link">Community</a>
         </li>
       </ul>
-      <form class="form-inline d-none d-md-flex ml-auto" action="..." method="..."> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
-        <input type="text" class="form-control" placeholder="1234..." required="required">
+      <form class="form-inline d-none d-md-flex ml-auto" action="get" method="/check"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+        <input type="text" id="id" class="form-control" placeholder="1234..." required="required">
         <button class="btn btn-primary" type="submit">Check ID</button>
       </form>
       <!-- Navbar content (with the dropdown menu) -->
@@ -89,7 +89,7 @@ echo $font_awesome_kit;
             <div class="dropdown-content">
               <form action="/check" method="get">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="1234..." required="required">
+                  <input type="text" id="id" class="form-control" placeholder="1234..." required="required">
                 </div>
                 <button class="btn btn-primary btn-block" type="submit">Check ID</button>
               </form>
