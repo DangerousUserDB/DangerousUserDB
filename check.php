@@ -67,13 +67,14 @@ if ($result->num_rows > 0) {
     }
 }
 
+if(!isset($r_discord_username)){
+    die(header("Location: /?notfound=true"));
+}
+
 
 if($times == "0"){
     $symbol = '<i class="fas fa-check-circle" style="color:green;font-size:18px;"></i>'; 
     $message = "All clear! Nothing looks wrong!";
-    if(!isset($r_discord_username)){
-        die(header("Location: /?notfound=true"));
-    }
 }else{
     $symbol = '<i class="fas fa-radiation-alt" style="color:red;font-size:18px;"></i>'; 
     $message = "Warning: We have recived ${times} report(s) about this user.";
