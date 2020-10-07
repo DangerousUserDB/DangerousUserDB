@@ -16,6 +16,7 @@ limitations under the License.
 
 include "includes/header.php";
 
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
@@ -70,9 +71,26 @@ if ($result->num_rows > 0) {
 if($times == "0"){
     $symbol = '<i class="fas fa-check-circle" style="color:green;font-size:18px;"></i>'; 
     $message = "All clear! Nothing looks wrong!";
+    if(!isset($r_discord_username)){
+        die(header("Location: /?notfound=true"));
+    }
 }else{
     $symbol = '<i class="fas fa-radiation-alt" style="color:red;font-size:18px;"></i>'; 
     $message = "Warning: We have recived ${times} report(s) about this user.";
+    if(!isset($r_discord_username)){
+        ?>
+        <script type="text/javascript">
+  function toastAlert() {
+    var alertContent = "Notice: The discord user request has deleted their account. These reports are shown for historical reasons.";
+    halfmoon.initStickyAlert({
+      content: alertContent,      // Required, main content of the alert, type: string (can contain HTML)
+      title: "Notice"      // Optional, title of the alert, default: "", type: string
+    })
+  }
+  toastAlert();
+  </script>
+        <?php
+    }
 }
 
 
@@ -89,7 +107,4 @@ if($times == "0"){
     echo $message;
     ?>
   </p>
-  <div class="text-right"> <!-- text-right = text-align: right -->
-    More
-  </div>
 </div>
