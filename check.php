@@ -79,7 +79,7 @@ if($times == "0"){
 }else{
     $symbol = '<i class="fas fa-radiation-alt" style="color:red;font-size:18px;"></i>'; 
     $message = "Warning: We have recived ${times} report(s) about this user.";
-    if(!isset($r_discord_username)){
+    if($api["username"] == ""){
         ?>
         <script type="text/javascript">
   function toastAlert() {
@@ -97,7 +97,9 @@ if($times == "0"){
 
 
     echo "<br>";
-    echo "<h2>User Profile - ${r_discord_username}</h2>";
+    if($api["username"] !== ""){
+        echo "<h2>User Profile - ${r_discord_username}</h2>";
+    }
     ?>
     <div class="card">
         <h2 class="card-title">
