@@ -35,7 +35,7 @@ if ($conn->connect_error) {
 if($_SESSION["discord_username"] = ""){
   echo "<br>Note, since you are not signed in, you are reporting anonymously.<br>";
 }else{
-  echo "<br>Reporting as " . $_SESSION["username"] . "<br>";
+  echo "<br>Reporting as " . $_SESSION["discord_username"] . "<br>";
 }
 ?>
 <form method="post" class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
