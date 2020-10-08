@@ -111,7 +111,7 @@ if(isset($_POST["id"])){
     $curl = curl_init();
     curl_setopt_array($curl, [
         CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_URL => "https://discord.com/api/v8/users/${id}",
+        CURLOPT_URL => "https://discord.com/api/v8/users/${discord_id}",
         CURLOPT_USERAGENT => 'Dangerous User DB'
     ]);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
