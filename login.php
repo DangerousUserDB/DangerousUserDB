@@ -27,7 +27,7 @@ use Xwilarg\Discord\OAuth2;
 // Enter your Discord Oauth details here:
 
 // Replace this with your site's homepage:
-$callback = "https://discord.riverside.rocks";
+$callback = "https://discord.riverside.rocks" . "/login";
 
 $oauth2 = new OAuth2($_ENV["DISCORD_CLIENT"], $_ENV["DISCORD_SECRET"], $callback);
 
