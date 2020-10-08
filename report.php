@@ -81,7 +81,7 @@ if(isset($_POST["id"])){
     if(isset($_SESSION["discord_username"])){
       $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_user_id"]));
     }else{
-      $reporter_username = "0";
+      $reporter_username = "Anonymous";
     }
     $cat = $conn -> real_escape_string(xss($_POST["cat"]));
     /*====================
