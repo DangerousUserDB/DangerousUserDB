@@ -47,7 +47,7 @@ if(!isset($_SESSION["username"])){
   <!-- Multi-select -->
   <div class="form-group">
     <label for="languages" class="required">Abuse Type</label>
-    <select class="form-control" id="languages" multiple="multiple" required="required" size="5">
+    <select class="form-control" id="cat" name="cat" multiple="multiple" required="required" size="5">
       <option value="spam">Spam</option>
       <option value="mass">Mass Ads</option>
       <option value="trolling">Trolling</option>
@@ -59,7 +59,7 @@ if(!isset($_SESSION["username"])){
   <!-- Textarea -->
   <div class="form-group">
     <label for="description">Details</label>
-    <textarea class="form-control" id="description" placeholder="Details, if needed..."></textarea>
+    <textarea class="form-control" id="details" name="details" placeholder="Details, if needed..."></textarea>
   </div>
     <div style="width:60%;">
         <i>By submitting this form, I understand that this is not run by Discord staff and thus accounts reported here will not be taken down. This is simply a tool to warn other server owners about malicous users.</i>
@@ -69,9 +69,41 @@ if(!isset($_SESSION["username"])){
 </form>
 <?php
 if(isset($_POST["id"])){
-    $discord_id = $conn -> real_escape_string($_POST["id"]);
-    if (!ctype_digit($myString)) {
+    /*======================
+    |   Define Variables   |
+    ======================*/
+    $discord_id = $conn -> real_escape_string(xss($_POST["id"]));
+    if(isset($_SESSION["discord_user_id"])){
+      $reporter_id = $conn -> real_escape_string(xss($_SESSION["discord_user_id"]));
+    }else{
+      $reporter_id = "0";
+    }
+    if(isset($_SESSION["discord_username"])){
+      $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_user_id"]));
+    }else{
+      $reporter_username = "0";
+    }
+    $cat = $conn -> real_escape_string(xss($_POST["cat"]));
+    /*====================
+    | Define Catagories  |
+    ====================*/
+    $cats = array(
+      "spam" => "0",
+      "trolling" => "0",
+      "mass" => "0",
+      "grabbers" => "0",
+      "raid" => "0"
+    );
+    if($cats[$cat] !== "0"){
+      die("<br>400: Bad Request<br>");
+    }
+    $epoch = time();
+    $details = $conn -> real_escape_string(xss($_POST["details"]));
+    if (!ctype_digit($discord_id)) {
         die("<br>Sorry, but that doesn't look like a valid discord ID. Please try again.");
+    }
+    if(!isset($discord_id)){
+      die("Bad Request");
     }
     $discord_token = $_ENV['BOT_TOKEN'];
 
@@ -92,5 +124,8 @@ if(isset($_POST["id"])){
     if($api["username"] == ""){
         die("<br><br>User does not exsist. Perhaps they deleted their account?");
     }
-    // Do SQL stuff
+    
+    $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${reporter_id}', '${reporter_username}', '${cat}', '${details}', '${epoch}')";
+    $result = $conn->query($sql);
+    die(header("Location: /check?id=${discord_id}"));
     }
