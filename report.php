@@ -60,3 +60,7 @@ if ($conn->connect_error) {
         <!-- Submit button -->
   <input class="btn btn-primary" type="submit" value="Submit">
 </form>
+<?php
+if(isset($_POST["id"]){
+ $discord_id = $_POST["id"];
+}
