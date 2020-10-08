@@ -30,6 +30,7 @@ if ($conn->connect_error) {
 }
 
 ?>
+<h2>File a Report</h2>
 <form method="post" class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
   <!-- Input -->
   <div class="form-group">
@@ -53,7 +54,9 @@ if ($conn->connect_error) {
     <label for="description">Details</label>
     <textarea class="form-control" id="description" placeholder="Details, if needed..."></textarea>
   </div>
-
-  <!-- Submit button -->
+    <div style="width:60%;">
+        <i>By submitting this form, I understand that this is not run by Discord staff and thus accounts reported here will not be taken down. This is simply a tool to warn other server owners about malicous users.</i>
+    </div>
+        <!-- Submit button -->
   <input class="btn btn-primary" type="submit" value="Submit">
 </form>
