@@ -42,14 +42,14 @@ if(!isset($_SESSION["username"])){
   <!-- Input -->
   <div class="form-group">
     <label for="full-name" class="required">ID</label>
-    <input type="text" class="form-control" id="id" name="id" placeholder="Full name" required="required">
+    <input type="text" class="form-control" id="id" name="id" placeholder="93829473824..." required="required">
   </div>
   <!-- Multi-select -->
   <div class="form-group">
     <label for="languages" class="required">Abuse Type</label>
     <select class="form-control" id="cat" name="cat" multiple="multiple" required="required" size="5">
       <option value="spam">Spam</option>
-      <option value="mass">Mass Ads</option>
+      <option value="mass-ads">Mass Ads</option>
       <option value="trolling">Trolling</option>
       <option value="raid">Raid</option>
       <option value="grabbers">IP Grabbers</option>
@@ -90,7 +90,7 @@ if(isset($_POST["id"])){
     $cats = array(
       "spam" => "0",
       "trolling" => "0",
-      "mass" => "0",
+      "mass-ads" => "0",
       "grabbers" => "0",
       "raid" => "0"
     );
