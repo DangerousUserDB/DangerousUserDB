@@ -30,3 +30,30 @@ if ($conn->connect_error) {
 }
 
 ?>
+<form method="post" class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+  <!-- Input -->
+  <div class="form-group">
+    <label for="full-name" class="required">ID</label>
+    <input type="text" class="form-control" id="id" name="id" placeholder="Full name" required="required">
+  </div>
+  <!-- Multi-select -->
+  <div class="form-group">
+    <label for="languages" class="required">Abuse Type</label>
+    <select class="form-control" id="languages" multiple="multiple" required="required" size="5">
+      <option value="spam">Spam</option>
+      <option value="mass">Mass Ads</option>
+      <option value="trolling">Trolling</option>
+      <option value="raid">Raid</option>
+      <option value="grabbers">IP Grabbers</option>
+    </select>
+  </div>
+
+  <!-- Textarea -->
+  <div class="form-group">
+    <label for="description">Details</label>
+    <textarea class="form-control" id="description" placeholder="Details, if needed..."></textarea>
+  </div>
+
+  <!-- Submit button -->
+  <input class="btn btn-primary" type="submit" value="Submit">
+</form>
