@@ -87,4 +87,3 @@ if(isset($_POST["id"])){
     }
     // Do SQL stuff
     }
-}
