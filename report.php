@@ -31,6 +31,13 @@ if ($conn->connect_error) {
 
 ?>
 <h2>File a Report</h2>
+<?php
+if(!isset($_SESSION["username"])){
+  echo "<br>Note, since you are not signed in, you are reporting anonymously.<br>";
+}else{
+  echo "<br>Reporting as " . $_SESSION["username"] . "<br>";
+}
+?>
 <form method="post" class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
   <!-- Input -->
   <div class="form-group">
