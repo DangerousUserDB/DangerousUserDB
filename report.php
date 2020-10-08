@@ -127,5 +127,6 @@ if(isset($_POST["id"])){
     
     $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${reporter_id}', '${reporter_username}', '${cat}', '${details}', '${epoch}')";
     $result = $conn->query($sql);
-    die(header("Location: /check?id=${discord_id}"));
+    header("Location: /check?id=${discord_id}");
+    die();
     }

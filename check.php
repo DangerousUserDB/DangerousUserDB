@@ -106,6 +106,29 @@ if($times == "0"){
         <?php
     echo "<h3>${times} - Total Reports</h3><br>${symbol}"
     ?>
+    <table class="table">
+  <thead>
+    <tr>
+      <th>List of Reports - Showing Last Five</th>
+      </tr>
+  </thead>
+  <tbody>
+      <?php
+    $sql = "SELECT * FROM reports ORDER BY epoch DESC";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $t = $row["epoch"];
+            echo "<tr>";
+      echo "<th>" . $row["reporter_discord_username"] . "</th>";
+      echo "<td>" . $row["cat"] . "</td>";
+      echo "<td>" . $row["details"] . "</td>";
+      echo "<td>" . date("m-d-y H:i:s",$ptime) . "</td>";
+      echo "</tr>";
+        }
+    }
+      ?>
   <p>
     <?php
     echo $message;
