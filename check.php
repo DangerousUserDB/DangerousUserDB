@@ -123,7 +123,7 @@ if($times == "0"){
             $t = $row["epoch"];
             echo "<tr>";
       echo "<th>" . $row["reporter_discord_username"] . "</th>";
-      echo "<td>" . $row["cat"] . "</td>";
+      echo "<td><span class='badge badge-danger'>" . $row["cat"] . "</span></td>";
       echo "<td>" . $row["details"] . "</td>";
       echo "<td>" . date("m-d-y H:i:s",$ptime) . "</td>";
       echo "</tr>";
