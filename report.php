@@ -61,7 +61,7 @@ if ($conn->connect_error) {
   <input class="btn btn-primary" type="submit" value="Submit">
 </form>
 <?php
-if(isset($_POST["id"]){
+if(isset($_POST["id"])){
     $discord_id = $conn -> real_escape_string($_POST["id"]);
     if (!ctype_digit($myString)) {
         die("<br>Sorry, but that doesn't look like a valid discord ID. Please try again.");
