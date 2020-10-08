@@ -125,7 +125,7 @@ if($times == "0"){
       echo "<th>" . $row["reporter_discord_username"] . "</th>";
       echo "<td><span class='badge badge-danger'>" . $row["cat"] . "</span></td>";
       echo "<td>" . $row["details"] . "</td>";
-      echo "<td>" . date("m-d-y H:i:s",$ptime) . "</td>";
+      echo "<td>" . date("m-d-y H:i:s",$t) . "</td>";
       echo "</tr>";
         }
     }
