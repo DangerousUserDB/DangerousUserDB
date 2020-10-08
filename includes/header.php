@@ -37,8 +37,8 @@ function createTitleFromURI($uri){
 <head>
 <?php
 echo $font_awesome_kit;
-?>
   echo "<title>" . createTitleFromURI($_SERVER['REQUEST_URI']) . " - Dangerous User Database</title>";
+  ?>
 <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/css/halfmoon-variables.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/js/halfmoon.min.js"></script>
 </head>
