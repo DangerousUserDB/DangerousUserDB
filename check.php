@@ -114,7 +114,8 @@ if($times == "0"){
   </thead>
   <tbody>
       <?php
-    $sql = "SELECT * FROM reports ORDER BY epoch DESC";
+    $reqid = $conn -> real_escape_string(xss($_GET["id"]));
+    $sql = "SELECT * FROM reports WHERE discord_id='${reqid}' ORDER BY epoch DESC";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
