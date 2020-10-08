@@ -62,5 +62,29 @@ if ($conn->connect_error) {
 </form>
 <?php
 if(isset($_POST["id"]){
- $discord_id = $_POST["id"];
+    $discord_id = $conn -> real_escape_string($_POST["id"]);
+    if (!ctype_digit($myString)) {
+        die("<br>Sorry, but that doesn't look like a valid discord ID. Please try again.");
+    }
+    $discord_token = $_ENV['BOT_TOKEN'];
+
+
+    $curl = curl_init();
+    curl_setopt_array($curl, [
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_URL => "https://discord.com/api/v8/users/${id}",
+        CURLOPT_USERAGENT => 'Dangerous User DB'
+    ]);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        "Authorization: Bot ${discord_token}",
+    ));
+    $resp = curl_exec($curl);
+    curl_close($curl);
+
+    $api = json_decode($resp, true);
+    if($api["username"] == ""){
+        die("<br><br>User does not exsist. Perhaps they deleted their account?");
+    }
+    // Do SQL stuff
+    }
 }
