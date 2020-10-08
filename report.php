@@ -32,7 +32,7 @@ if ($conn->connect_error) {
 ?>
 <h2>File a Report</h2>
 <?php
-if(!isset($_SESSION["username"])){
+if($_SESSION["discord_username"] = ""){
   echo "<br>Note, since you are not signed in, you are reporting anonymously.<br>";
 }else{
   echo "<br>Reporting as " . $_SESSION["username"] . "<br>";
@@ -73,8 +73,8 @@ if(isset($_POST["id"])){
     |   Define Variables   |
     ======================*/
     $discord_id = $conn -> real_escape_string(xss($_POST["id"]));
-    if(isset($_SESSION["discord_user_id"])){
-      $reporter_id = $conn -> real_escape_string(xss($_SESSION["discord_user_id"]));
+    if(isset($_SESSION["discord_id"])){
+      $reporter_id = $conn -> real_escape_string(xss($_SESSION["discord_id"]));
     }else{
       $reporter_id = "0";
     }
