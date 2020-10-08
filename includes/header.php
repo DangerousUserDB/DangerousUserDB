@@ -26,12 +26,19 @@ function xss($text) {
   return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
 
+function createTitleFromURI($uri){
+  $first_letter = $uri[0];
+  $cap = strtoupper($first_letter);
+  return $cap . substr($uri, 1);
+}
+
 ?>
 <!DOCTYPE html>
 <head>
 <?php
 echo $font_awesome_kit;
 ?>
+  echo "<title>" . createTitleFromURI($_SERVER['REQUEST_URI']) . " - Dangerous User Database</title>";
 <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/css/halfmoon-variables.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/js/halfmoon.min.js"></script>
 </head>
@@ -99,5 +106,5 @@ echo $font_awesome_kit;
       </div>
     </nav>
 
-    <!-- Content wrapper -->
+    <!-- Content wrapper, the rest of the pages content should go under here -->
     <div class="content-wrapper">
