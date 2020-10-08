@@ -52,8 +52,9 @@ if ($oauth2->isRedirected() === false) { // Did the client already logged in ?
         } else {
             $answer["username"] = $_SESSION["discord_username"];
             $answer["id"] = $_SESSION["discord_id"];
-            header("Location: /");
-            die();
+            echo $_SESSION["discord_username"];
+            //header("Location: /");
+            //die();
         }
 
         echo '<br/><br/>';
