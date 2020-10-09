@@ -27,5 +27,5 @@ if ($conn->connect_error) {
 }
 
 if(! $_GET["id"]){
-   die(echo(json_encode("Missing ID Parameter")));
+   die(json_encode("Missing ID Parameter")));
 }
