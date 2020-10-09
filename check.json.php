@@ -72,8 +72,27 @@ if ($result->num_rows > 0) {
     }
 }
 
+$sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}' ORDER BY epoch ASC";
+$result = $conn->query($sql);
 
 
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $last = $row["epoch"];
+        break;
+    }
+}
+
+$sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}' ORDER BY epoch DESC";
+$result = $conn->query($sql);
+
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $latest = $row["epoch"];
+        break;
+    }
+}
 
 if($times == "0"){
     if($api["username"] == ""){
@@ -86,7 +105,7 @@ if($times == "0"){
     }
      $return = array(
          "reports" => $times,
-         "score" => "N/A"
+         "score" => score($times, $last, $latest)
      );
     echo json_encode($return, true);
         die();

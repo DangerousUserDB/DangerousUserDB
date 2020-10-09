@@ -47,4 +47,5 @@ function score($number, $first_epoch, $last_epoch)
     {
         $abuse = $numbers[$number];
     }
+    return $abuse;
 }
