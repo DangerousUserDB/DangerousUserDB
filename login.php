@@ -48,11 +48,12 @@ if ($oauth2->isRedirected() === false) { // Did the client already logged in ?
         // ---------- USER INFORMATION
         $answer = $oauth2->getUserInformation(); // Same as $oauth2->getCustomInformation('users/@me')
         if (array_key_exists("code", $answer)) {
-            exit("An error occured: " . $answer["message"]);
+            print_r($answer);
         } else {
-            $answer["username"] = $_SESSION["discord_username"];
-            $answer["id"] = $_SESSION["discord_id"];
-            echo $_SESSION["discord_username"];
+            print_r($answer);
+            //$answer["username"] = $_SESSION["discord_username"];
+            //$answer["id"] = $_SESSION["discord_id"];
+            //echo $_SESSION["discord_username"];
             //header("Location: /");
             //die();
         }
