@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*======================================================================
 Copyright 2020, Riverside Rocks and the DUDB Authors
 
