@@ -11,9 +11,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ========================================================================*/
 
-header("Content-type: application/json");
-
-require __DIR__ . '/vendor/autoload.php';
+include "includes/apis.php";
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
