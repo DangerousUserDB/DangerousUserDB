@@ -32,7 +32,7 @@ if ($conn->connect_error) {
 ?>
 <h2>File a Report</h2>
 <?php
-if($_SESSION["discord_username"] = ""){
+if(! $_SESSION["discord_username"]){
   echo "<br>Note, since you are not signed in, you are reporting anonymously.<br>";
 }else{
   echo "<br>Reporting as " . $_SESSION["discord_username"] . "<br>";
