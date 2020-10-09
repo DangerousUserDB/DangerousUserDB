@@ -16,6 +16,7 @@ header("Content-type: application/json");
 require 'vendor/autoload.php';
 
 $numbers = array(
+    "0" => "0%",
     "1" => "14%",
     "2" => "24%",
     "3" => "38%"
@@ -41,7 +42,8 @@ function score($number, $first_epoch, $last_epoch)
 
     if(!in_array($number, $numbers))
     {
-        $abuse = $timeframe/$score * 10;
+        $abuse1 = $timeframe/$score * 10;
+        $abuse = $abuse1 . "%";
     }
     else
     {
