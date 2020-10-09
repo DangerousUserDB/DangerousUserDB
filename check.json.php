@@ -36,3 +36,67 @@ if($_GET["id"] == ""){
    echo json_encode($errors, true);
    die();
 }
+
+$id = $_GET["id"];
+$discord_token = $_ENV['BOT_TOKEN'];
+
+
+$curl = curl_init();
+curl_setopt_array($curl, [
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => "https://discord.com/api/v8/users/${id}",
+    CURLOPT_USERAGENT => 'Dangerous User DB'
+]);
+curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+    "Authorization: Bot ${discord_token}",
+));
+$resp = curl_exec($curl);
+curl_close($curl);
+
+$api = json_decode($resp, true);
+
+/*
+if(!isset($r_discord_username)){
+    header("Location: /?notfound=true");
+}
+*/
+
+$r_discord_username = xss($api["username"]);
+$sql_discord = $conn -> real_escape_string($_GET["id"]);
+$sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
+$result = $conn->query($sql);
+
+$times = 0;
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $times = $times + 1;
+    }
+}
+
+
+
+
+if($times == "0"){
+    if($api["username"] == ""){
+        $errors = array(
+       "Message" => "Discord API: User Does Not Exsist",
+       "Code" => "400"
+       );
+        echo json_encode($errors, true);
+        die();
+    }
+     $return = array(
+         "reports" => $times,
+         "score" => "N/A"
+     );
+    echo json_encode($return, true);
+        die();
+}else{
+    $return = array(
+         "reports" => $times,
+         "score" => "N/A"
+     );
+    echo json_encode($return, true);
+        die();
+}
