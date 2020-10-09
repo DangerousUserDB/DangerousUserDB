@@ -27,5 +27,10 @@ if ($conn->connect_error) {
 }
 
 if($_GET["id"] == ""){
-   die(json_encode("Missing ID Parameter"));
+   $errors = array(
+       "Message" => "Missing ID Parameter",
+       "Code" => "401"
+       );
+   echo json_encode($errors, true);
+   die();
 }
