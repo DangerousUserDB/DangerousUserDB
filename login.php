@@ -17,6 +17,12 @@ limitations under the License.
 
 include "includes/header.php";
 
+$login_shutoff = "true";
+
+if($login_shutoff == "true"){
+    die("Login is not available at this time.");
+}
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
@@ -57,8 +63,8 @@ if ($oauth2->isRedirected() === false) { // Did the client already logged in ?
             $answer["username"] = $_SESSION["discord_username"];
             $answer["id"] = $_SESSION["discord_id"];
             //echo $_SESSION["discord_username"];
-            //header("Location: /");
-            //die();
+            header("Location: /");
+            die();
         }
 
         echo '<br/><br/>';
