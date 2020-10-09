@@ -26,6 +26,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if(! $_GET["id"]){
+if($_GET["id"] == ""){
    die(json_encode("Missing ID Parameter")));
 }
