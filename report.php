@@ -68,9 +68,7 @@ if(! $_SESSION["discord_username"]){
     <label for="description">Details</label>
     <textarea class="form-control" id="details" name="details" placeholder="Details, if needed..."></textarea>
   </div>
-    <div style="width:60%;">
         <i>By submitting this form, I understand that this is not run by Discord staff and thus accounts reported here will not be taken down. This is simply a tool to warn other server owners about malicous users.</i>
-    </div>
         <!-- Submit button -->
   <input class="btn btn-primary" type="submit" value="Submit">
 </form>
@@ -85,10 +83,10 @@ if(isset($_POST["id"])){
     }else{
       $reporter_id = "0";
     }
-    if(! $_SESSION["discord_username"]){
+    if($_SESSION["discord_username"] == ""){
       $reporter_username = "Anonymous";
     }else{
-      $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_user_id"]));
+      $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_username"]));
     }
     $cat = $conn -> real_escape_string(xss($_POST["cat"]));
     /*====================
