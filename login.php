@@ -17,7 +17,7 @@ limitations under the License.
 
 include "includes/header.php";
 
-$login_shutoff = "true";
+$login_shutoff = "false";
 
 if($login_shutoff == "true"){
     die("Login is not available at this time.");
