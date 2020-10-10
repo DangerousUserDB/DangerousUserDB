@@ -69,6 +69,7 @@ if(! $_SESSION["discord_username"]){
     <textarea class="form-control" id="details" name="details" placeholder="Details, if needed..."></textarea>
   </div>
         <i>By submitting this form, I understand that this is not run by Discord staff and thus accounts reported here will not be taken down. This is simply a tool to warn other server owners about malicous users.</i>
+        <br>
         <!-- Submit button -->
   <input class="btn btn-primary" type="submit" value="Submit">
 </form>
