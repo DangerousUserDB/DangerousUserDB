@@ -50,8 +50,11 @@ $reqid = $conn -> real_escape_string(xss($_SESSION["discord_id"]));
 $sql = "SELECT * FROM reports WHERE discord_id='${reqid}' ORDER BY epoch DESC";
 $result = $conn->query($sql);
 
+$count = 0;
+
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
+      $count = $count + 1;
       $t = $row["epoch"];
       echo "<tr>";
 echo "<th>" . $row["reporter_discord_username"] . "</th>";
@@ -60,4 +63,8 @@ echo "<td>" . $row["details"] . "</td>";
 echo "<td>" . date("m-d-y",$t) . "</td>";
 echo "</tr>";
   }
+}
+
+if($count == 0){
+    echo "No reports yet!";
 }
