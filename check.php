@@ -111,7 +111,8 @@ if($times == "0"){
         $score = rawscore($times);
         ?>
 <div class="progress">
-  <?php echo "<div class='progress-bar' role='progressbar' style='width: ${score}%' aria-valuenow='${score}' aria-valuemin='0' aria-valuemax='100'></div>"; ?>
+<?php echo "<h3>Abuse Score: ${score}%</h3>";
+  <?php echo "<br><div class='progress-bar' role='progressbar' style='width: ${score}%' aria-valuenow='${score}' aria-valuemin='0' aria-valuemax='100'></div><br>"; ?>
 
 </div>
         <?php
