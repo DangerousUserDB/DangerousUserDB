@@ -47,7 +47,7 @@ if($_SESSION["discord_username"] == ""){
 <tbody>
 <?php
 $reqid = $conn -> real_escape_string(xss($_SESSION["discord_id"]));
-$sql = "SELECT * FROM reports WHERE discord_id='${reqid}' ORDER BY epoch DESC";
+$sql = "SELECT * FROM reports WHERE reporter_discord_id='${reqid}' ORDER BY epoch DESC";
 $result = $conn->query($sql);
 
 $count = 0;
