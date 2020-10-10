@@ -17,7 +17,7 @@ require 'vendor/autoload.php';
 
 $numbers = array(
     "0" => "0%",
-    1 => "14%",
+    "1" => "14%",
     '2' => "24%",
     '3' => "38%",
     '4' => "68%",
@@ -54,10 +54,7 @@ function score($number, $first_epoch, $last_epoch)
 {
     $timeframe = $last_epoch - $first_epoch;
 
-    if(in_array($number, $numbers))
-    {
-        $abuse = $numbers[$number];
-        return $abuse;
-        die();
-    }
+    $abuse = $numbers[$number];
+    return $abuse;
+    die();
 }
