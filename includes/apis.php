@@ -48,7 +48,7 @@ function score($number, $first_epoch, $last_epoch)
     }
     else
     {
-        $abuse1 = $timeframe/$score * 10;
+        $abuse1 = $timeframe/$number * 10;
         $abuse = $abuse1 . "%";
     }
     return $abuse;
