@@ -57,3 +57,5 @@ if ($result->num_rows > 0) {
     }
 }
 echo "<strong><h4>" . $times . "</h4></strong>";
+
+include "includes/footer.php";

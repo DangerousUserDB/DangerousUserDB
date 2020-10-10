@@ -136,3 +136,5 @@ if(isset($_POST["id"])){
     header("Location: /check?id=${discord_id}");
     die();
     }
+
+    include "includes/footer.php";

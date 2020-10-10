@@ -147,3 +147,5 @@ if($times == "0"){
   <p>
   </p>
 </div>
+<?php
+include "includes/footer.php";

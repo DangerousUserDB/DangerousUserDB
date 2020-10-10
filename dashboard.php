@@ -68,3 +68,5 @@ echo "</tr>";
 if($count == 0){
     echo "No reports yet!";
 }
+
+include "includes/footer.php";
