@@ -112,7 +112,7 @@ if($times == "0"){
 }else{
     $return = array(
          "reports" => $times,
-         "score" => "N/A"
+         "score" => score($times, $last, $latest)
      );
     echo json_encode($return, true);
         die();
