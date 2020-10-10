@@ -40,6 +40,20 @@ include "includes/header.php";
 <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
   <div class="card">
     <h2 class="card-title">
+      API Docs
+    </h2>
+    <p class="text-muted">
+        Learn how to use our fine API, which is free to use.
+    </p>
+    <div class="text-right"> <!-- text-right = text-align: right -->
+      <a href="/report" class="btn">Report</a>
+    </div>
+  </div>
+</div>
+<div class="col-lg">
+<div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+  <div class="card">
+    <h2 class="card-title">
       Report a user
     </h2>
     <p class="text-muted">
