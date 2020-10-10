@@ -48,7 +48,7 @@ function score($number, $first_epoch, $last_epoch)
     }
     else
     {
-        $real_time = $timeframe/60;
+        $real_time = $timeframe/1000;
         $abuse1 = $real_time/$number * 10;
         $abuse = $abuse1 . "%";
     }
