@@ -46,7 +46,7 @@ include "includes/header.php";
         Learn how to use our fine API, which is free to use.
     </p>
     <div class="text-right"> <!-- text-right = text-align: right -->
-      <a href="/report" class="btn">Report</a>
+      <a href="/docs/index.php" class="btn">Read More</a>
     </div>
   </div>
 </div>
