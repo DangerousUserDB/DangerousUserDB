@@ -75,6 +75,9 @@ echo $font_awesome_kit;
           <a href="/about" class="nav-link">About Us</a>
         </li>
         <li class="nav-item">
+            <a href="/docs/index.php" class="nav-link">API Docs</a>
+        </li>
+        <li class="nav-item">
             <a href="//riverside.rocks/community" class="nav-link">Community</a>
         </li>
       </ul>
@@ -92,6 +95,7 @@ echo $font_awesome_kit;
           <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1"> <!-- w-200 = width: 20rem (200px) -->
             <a href="/report" class="dropdown-item">Report</a>
             <a href="/about" class="dropdown-item">About Us</a>
+            <a href="/docs/index.php" class="dropdown-item">API Docs</a>
             <a href="//riverside.rocks/community" class="dropdown-item">Community</a>
             <div class="dropdown-divider"></div>
             <div class="dropdown-content">
