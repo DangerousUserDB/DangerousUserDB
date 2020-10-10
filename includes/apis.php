@@ -19,7 +19,10 @@ $numbers = array(
     0 => "0%",
     1 => "14%",
     2 => "24%",
-    3 => "38%"
+    3 => "38%",
+    4 => "68%",
+    5 => "86%",
+    6 => "100%"
 );
 
 /*===============================================
@@ -40,17 +43,15 @@ function score($number, $first_epoch, $last_epoch)
 {
     $timeframe = $last_epoch - $first_epoch;
 
-    if($number == "0")
+    if(in_array($number, $numbers))
     {
-        $abuse = "0%";
+        $abuse = $numbers[$number];
         return $abuse;
         die();
     }
     else
     {
-        $real_time = $timeframe/1000;
-        $abuse1 = $real_time/$number * 10;
-        $abuse = $abuse1 . "%";
+        $abuse = "100%";
     }
     return $abuse;
 }
