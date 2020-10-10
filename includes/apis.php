@@ -31,9 +31,8 @@ returns times in UTC.
 
 ================================================*/
 
-function score($number, $first_epoch, $last_epoch)
+function score($number)
 {
-    $timeframe = $last_epoch - $first_epoch;
     $numbers = array(
         "0" => "0%",
         "1" => "14%",

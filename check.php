@@ -15,6 +15,8 @@ limitations under the License.
 ========================================================================*/
 
 include "includes/header.php";
+include "includes/apis.php";
+
 
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -105,6 +107,15 @@ if($times == "0"){
         <h2 class="card-title">
         <?php
     echo "<h3>${times} - Total Reports</h3><br>${symbol}"
+    if($times !== "0"){
+        $score = score($times);
+        ?>
+<div class="progress">
+  <?php echo "<div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='${score}' aria-valuemin='0' aria-valuemax='100'></div>"; ?>
+
+</div>
+        <?php
+    }
     ?>
     <table class="table">
   <thead>
