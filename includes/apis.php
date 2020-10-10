@@ -40,9 +40,9 @@ function score($number, $first_epoch, $last_epoch)
 {
     $timeframe = $last_epoch - $first_epoch;
 
-    if(in_array($number, $numbers))
+    if($number == "0")
     {
-        $abuse = $numbers[$number];
+        $abuse = "0%";
         return $abuse;
         die();
     }
