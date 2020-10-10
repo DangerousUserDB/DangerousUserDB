@@ -40,14 +40,16 @@ function score($number, $first_epoch, $last_epoch)
 {
     $timeframe = $last_epoch - $first_epoch;
 
-    if(!in_array($number, $numbers))
+    if(in_array($number, $numbers))
     {
-        $abuse1 = $timeframe/$score * 10;
-        $abuse = $abuse1 . "%";
+        $abuse = $numbers[$number];
+        return $abuse;
+        die();
     }
     else
     {
-        $abuse = $numbers[$number];
+        $abuse1 = $timeframe/$score * 10;
+        $abuse = $abuse1 . "%";
     }
     return $abuse;
 }
