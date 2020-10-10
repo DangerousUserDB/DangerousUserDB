@@ -21,7 +21,7 @@ include "includes/header.php";
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm">
-<div class="w-300 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+<div class="w-300"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
   <div class="card">
     <h2 class="card-title">
       Get Started
@@ -37,7 +37,7 @@ include "includes/header.php";
 </div>
 </div>
 <div class="col-sm">
-<div class="w-300 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+<div class="w-300"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
   <div class="card">
     <h2 class="card-title">
       API Docs
@@ -51,7 +51,7 @@ include "includes/header.php";
   </div>
 </div>
 <div class="col-sm">
-<div class="w-300 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+<div class="w-300"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
   <div class="card">
     <h2 class="card-title">
       Report a user
