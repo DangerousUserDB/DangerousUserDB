@@ -42,6 +42,10 @@ echo $font_awesome_kit;
   ?>
 <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/css/halfmoon-variables.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/js/halfmoon.min.js"></script>
+<meta name="description" content=" Report + Check Dangerous Users on Discord with ease. ">
+<meta name="keywords" content="discord">
+<meta name="robots" content="index, follow">
+<meta name="language" content="EN">
 </head>
 <body onload="halfmoon.toggleDarkMode()">
 <center>
