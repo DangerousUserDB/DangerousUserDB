@@ -15,7 +15,7 @@ limitations under the License.
 ========================================================================*/
 session_start();
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // IMPORTANT CONFIGURATION!!!!!
 
