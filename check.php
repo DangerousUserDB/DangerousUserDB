@@ -76,10 +76,10 @@ if($times == "0"){
     if($api["username"] == ""){
         die(header("Location: /?notfound=true"));
     }
-    $symbol = '<i class="fas fa-check-circle" style="color:green;font-size:18px;"></i>'; 
+    $symbol = '<i class="fas fa-check-circle fa-5x" style="color:green;font-size:18px;"></i>'; 
     $message = "All clear! Nothing looks wrong!";
 }else{
-    $symbol = '<i class="fas fa-radiation-alt" style="color:red;font-size:18px;"></i>'; 
+    $symbol = '<i class="fas fa-radiation-alt fa-5x" style="color:red;font-size:18px;"></i>'; 
     $message = "Warning: We have recived ${times} report(s) about this user.";
     if($api["username"] == ""){
         ?>
@@ -121,7 +121,9 @@ if($times == "0"){
     <table class="table">
   <thead>
     <tr>
+    <center>
       <th>List of Reports - Showing Last Five</th>
+      </center>
       </tr>
   </thead>
   <tbody>
@@ -143,8 +145,5 @@ if($times == "0"){
     }
       ?>
   <p>
-    <?php
-    echo $message;
-    ?>
   </p>
 </div>
