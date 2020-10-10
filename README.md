@@ -12,7 +12,7 @@ https://discord.riverside.rocks
 
 ## Getting Started
 
-After cloning the repo, copy the env.example file to the .env file. Make sure that this is blocked from the internet! (Cloudflare is the best way to do this). Fill out the needed details. You will need to create an app at Discord: 
+After cloning the repo, copy the env.example file to the .env file. Make sure that this is blocked from the internet! (Cloudflare is the best way to do this). **If you ignore this step, your tokens and passwords will be on the Internet!** Fill out the needed details. You will need to create an app at Discord: 
 
 https://discord.com/developers/applications
 
