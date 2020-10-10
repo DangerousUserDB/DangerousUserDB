@@ -108,7 +108,7 @@ if($times == "0"){
         <?php
     echo "<h3>${times} - Total Reports</h3><br>${symbol}";
     if($times !== "0"){
-        $score = score($times);
+        $score = rawscore($times);
         ?>
 <div class="progress">
   <?php echo "<div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='${score}' aria-valuemin='0' aria-valuemax='100'></div>"; ?>
