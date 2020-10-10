@@ -30,7 +30,13 @@ include "includes/header.php";
         Create an account, get an API, and add our bot to your Discord server.
     </p>
     <div class="text-right"> <!-- text-right = text-align: right -->
-      <a href="/login" class="btn">Sign Up</a>
+      <?php
+      if($_SESSION["discord_username"] !== ""){
+        echo '<a href="/dashboard" class="btn">Visit Dashboard</a>';
+      }else{
+        echo '<a href="/login" class="btn">Sign Up</a>';
+      }
+      ?>
     </div>
   </div>
 </div>
