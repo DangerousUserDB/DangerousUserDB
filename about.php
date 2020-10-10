@@ -45,7 +45,6 @@ echo "<h2>About Us</h2>";
 echo $desc;
 
 
-echo "<br><h2>Stats</h2>";
 echo "<h3>Total Reports:</h3>";
 $sql = "SELECT * FROM reports";
 $result = $conn->query($sql);
@@ -57,4 +56,4 @@ if ($result->num_rows > 0) {
         $times = $times + 1;
     }
 }
-echo $times;
+echo "<strong><h4>" . $times . "</h4></strong>";
