@@ -50,6 +50,8 @@ include "includes/header.php";
     </div>
   </div>
 </div>
+</div>
+</div>
 <center>
 <div class="container-fluid">
   <div class="row">
