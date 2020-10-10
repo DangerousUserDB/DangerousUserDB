@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ========================================================================*/
 
-include "/includes/header.php";
-include "/includes/apis.php";
+include __DIR__ . "includes/header.php";
+include __DIR__ . "includes/apis.php";
 ?>
 
 <h2>API Documentation</h2>
