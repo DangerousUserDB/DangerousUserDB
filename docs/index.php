@@ -123,6 +123,7 @@ echo $font_awesome_kit;
       <th>Path</th>
       <th>Params</th>
       <th>Description</th>
+      <th>API Key Required?</th>
     </tr>
   </thead>
   <tbody>
@@ -131,4 +132,5 @@ echo $font_awesome_kit;
       <td>/check.json.php</td>
       <td>id</td>
       <td>Check the status of a user.</td>
+      <td>No</td>
     </tr>
