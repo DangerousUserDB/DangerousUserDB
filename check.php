@@ -113,7 +113,7 @@ if($times == "0"){
 
 <?php echo "<h3>Abuse Score: ${score}%</h3>"; ?>
   <?php echo "<br><div class='progress'><div class='progress-bar' role='progressbar' style='width: ${score}%' aria-valuenow='${score}' aria-valuemin='0' aria-valuemax='100'></div></div><br>"; ?>
-
+  <?php echo "<a href='/report?id=${sql_discord}'>" ?><button class="btn btn-danger" type="button">Report this user</button></a>
 </div>
         <?php
     }

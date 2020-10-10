@@ -42,7 +42,14 @@ if(! $_SESSION["discord_username"]){
   <!-- Input -->
   <div class="form-group">
     <label for="full-name" class="required">ID</label>
-    <input type="text" class="form-control" id="id" name="id" placeholder="93829473824..." required="required">
+    <?php
+    if(isset($_GET['id'])){
+      $get_id = xss($_GET["id"]);
+      echo "<input type='text' class='form-control' id='id' name='id' placeholder='93829473824...' value='${get_id}' required='required'>";
+    }else{
+      echo "<input type='text' class='form-control' id='id' name='id' placeholder='93829473824...' required='required'>";
+    }
+    ?>
   </div>
   <!-- Multi-select -->
   <div class="form-group">
