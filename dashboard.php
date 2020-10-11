@@ -69,13 +69,13 @@ if($count == 0){
     echo "No reports yet!";
 }
 
-$sql = "SELECT * FROM keys WHERE discord_id='${req_id}'";
+$sql = "SELECT * FROM keysa WHERE discord_id='${req_id}'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<br><h3>API Key: <code>" . $row["key"] . "</code></h3>";
-        if($row["key"] !== ""){
+        echo "<br><h3>API Key: <code>" . $row["keya"] . "</code></h3>";
+        if($row["keya"] !== ""){
             break;
         }else{
             function base64_rand() {
@@ -90,13 +90,13 @@ if ($result->num_rows > 0) {
                 $append = base64_rand();
                 $key .= $append;
             }
-            $sql = "INSERT INTO keys (discord_id, `key`) VALUES ('${req_id}', '${key}')";
+            $sql = "INSERT INTO keysa (discord_id, `keya`) VALUES ('${req_id}', '${key}')";
             $result = $conn->query($sql);
             $sql = "SELECT * FROM keys WHERE discord_id='${req_id}'";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<br><h3>API Key: <code>" . $row["key"] . "</code></h3>";
+                    echo "<br><h3>API Key: <code>" . $row["keya"] . "</code></h3>";
                 }
             }
         }
