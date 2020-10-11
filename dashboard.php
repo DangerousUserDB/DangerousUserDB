@@ -69,7 +69,7 @@ if($count == 0){
     echo "No reports yet!";
 }
 
-$sql = "SELECT * FROM keysa WHERE discord_id='${req_id}'";
+$sql = "SELECT * FROM keysa WHERE discord_id='${reqid}'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
