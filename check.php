@@ -147,5 +147,8 @@ if($times == "0"){
   <p>
   </p>
 </div>
+<br>
+<p>If any of the information here is not true, please contact us <a href="//riverside.rocks/contact">here</a>.
+<br>
 <?php
 include "includes/footer.php";
