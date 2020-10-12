@@ -79,8 +79,8 @@ echo "var time = ${time};";
 echo "</script>";
 
 ?>
-<script src="/src/chart.js"></script>
-<canvas id="traff" class="chartjs" width="1155" height="577" style="display: block; height: 385px; width: 770px;"></canvas>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <div id="chart_div"></div>
 <?php
 
 include "includes/footer.php";
