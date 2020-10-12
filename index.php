@@ -15,7 +15,28 @@ limitations under the License.
 ========================================================================*/
 
 include "includes/header.php";
-include "includes/mod_log.php";
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$servername = $_ENV['MYSQL_SERVER'];
+$username = $_ENV["MYSQL_USERNAME"];
+$password = $_ENV["MYSQL_PASSWORD"];
+$dbname = $_ENV["MYSQL_DATABASE"];
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if($_SESSION["discord_username"] == ""){
+  $reporter_username = "Anonymous";
+}else{
+  $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_username"]));
+}
+
+$sql = "INSERT INTO `log`(`discord_username`) VALUES ('${reporter_username}')";
+$result = $conn->query($sql);
 
 ?>
 <h1>Remove Danerous Users From Your Server - Fast</h1>

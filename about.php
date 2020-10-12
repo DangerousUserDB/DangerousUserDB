@@ -15,7 +15,6 @@ limitations under the License.
 ========================================================================*/
 
 include "includes/header.php";
-include "includes/mod_log.php";
 include "includes/apis.php";
 
 
@@ -41,6 +40,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+if($_SESSION["discord_username"] == ""){
+    $reporter_username = "Anonymous";
+  }else{
+    $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_username"]));
+}
+
+$sql = "INSERT INTO `log`(`discord_username`) VALUES ('${reporter_username}')";
+$result = $conn->query($sql);
 
 echo "<h2>About Us</h2>";
 echo $desc;

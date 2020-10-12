@@ -16,7 +16,6 @@ limitations under the License.
 ========================================================================*/
 
 include "includes/header.php";
-include "includes/mod_log.php";
 
 
 $login_shutoff = "false";
@@ -24,9 +23,6 @@ $login_shutoff = "false";
 if($login_shutoff == "true"){
     die("Login is not available at this time.");
 }
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 use Xwilarg\Discord\OAuth2;
 
