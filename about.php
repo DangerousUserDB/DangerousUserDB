@@ -86,7 +86,25 @@ if ($result->num_rows > 0) {
     }
 }
 
+
+$time_now = time();
+
+$mins = $time_now - 3600;
+
+$sql = "SELECT * FROM `log` WHERE epoch > ${mins}";
+$result = $conn->query($sql);
+
+$timez = 0;
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $timez = $timez + 1;
+    }
+}
+
 echo "<h3>Visits</h3>";
+echo "<strong><h4>Last Hour: " . $timez . "</h4></strong>";
+
 echo "<strong><h4>Last 24 Hours: " . $times . "</h4></strong>";
 
 $days = $time_now - 604800;
