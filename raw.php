@@ -31,10 +31,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if($_SESSION["discord_username"] == ""){
-    die("To prevent abuse, please sign in.");
-}
-
 $sql = "SELECT * FROM reports";
 $result = $conn->query($sql);
 
