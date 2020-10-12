@@ -69,4 +69,18 @@ if ($result->num_rows > 0) {
 }
 echo "<strong><h4>" . $times . "</h4></strong>";
 
+$time_now = time() - 14400;
+$time = date("H", $time_now);
+
+echo '<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>';
+echo "<br><h4>Traffic Statistics</h4>";
+echo "<script>";
+echo "var time = ${time};";
+echo "</script>";
+
+?>
+<script src="/src/chart.js"></script>
+<canvas id="traff" class="chartjs" width="1155" height="577" style="display: block; height: 385px; width: 770px;"></canvas>
+<?php
+
 include "includes/footer.php";
