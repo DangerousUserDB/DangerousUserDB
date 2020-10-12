@@ -47,7 +47,9 @@ if($_SESSION["discord_username"] == ""){
     $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_username"]));
 }
 
-$sql = "INSERT INTO `log`(`discord_username`) VALUES ('${reporter_username}')";
+$time = time();
+
+$sql = "INSERT INTO `log`(`discord_username`, `epoch`) VALUES ('${reporter_username}', '${time}')";
 $result = $conn->query($sql);
 
 echo "<h2>About Us</h2>";
