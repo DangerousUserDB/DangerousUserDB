@@ -57,7 +57,12 @@ echo $desc;
 
 
 echo "<h3>Total Reports:</h3>";
-$sql = "SELECT * FROM reports";
+
+$time_now = time();
+
+$hours = $time_now - 86400;
+
+$sql = "SELECT * FROM `log` WHERE epoch > ${hours}";
 $result = $conn->query($sql);
 
 $times = 0;
@@ -67,21 +72,26 @@ if ($result->num_rows > 0) {
         $times = $times + 1;
     }
 }
-echo "<strong><h4>" . $times . "</h4></strong>";
 
-$time_now = time() - 14400;
-$time = date("H", $time_now);
+echo "<strong><h4>Last 24 Hours: " . $times . "</h4></strong>";
 
-echo '<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>';
-echo "<br><h4>Traffic Statistics</h4>";
-echo "<script>";
-echo "var time = ${time};";
-echo "</script>";
+$days = $time_now - 604800;
+
+$sql = "SELECT * FROM reports WHERE epoch > ${days}";
+$result = $conn->query($sql);
+
+$times = 0;
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $times = $times + 1;
+    }
+}
+
+echo "<strong><h4>Last 7 Days: " . $times . "</h4></strong>";
 
 ?>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <srcipt src="/src/chart.js"></script>
-  <div id="chart_div"></div>
+
 <?php
 
 include "includes/footer.php";
