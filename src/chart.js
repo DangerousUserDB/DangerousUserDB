@@ -9,4 +9,39 @@ var four = getThisTime(time, 3);
 var five = getThisTime(time, 2);
 var six = getThisTime(time, 1);
 
-new Chart(document.getElementById("traff"),{"type":"bar","data":{"labels":[one, two, three, four, five, six, time],"datasets":[{"label":"My First Dataset","data":[65,59,80,81,56,55,40],"fill":false,"backgroundColor":["rgba(255, 99, 132, 0.2)","rgba(255, 159, 64, 0.2)","rgba(255, 205, 86, 0.2)","rgba(75, 192, 192, 0.2)","rgba(54, 162, 235, 0.2)","rgba(153, 102, 255, 0.2)","rgba(201, 203, 207, 0.2)"],"borderColor":["rgb(255, 99, 132)","rgb(255, 159, 64)","rgb(255, 205, 86)","rgb(75, 192, 192)","rgb(54, 162, 235)","rgb(153, 102, 255)","rgb(201, 203, 207)"],"borderWidth":1}]},"options":{"scales":{"yAxes":[{"ticks":{"beginAtZero":true}}]}}});
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Hour');
+      data.addColumn('number', 'Request Ammount');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: six+' am'}, 1],
+        [{v: [9, 0, 0], f: five+' am'}, 2],
+        [{v: [10, 0, 0], f: four+' am'}, 3],
+        [{v: [11, 0, 0], f: three+' am'}, 4],
+        [{v: [12, 0, 0], f: two+'12 pm'}, 5],
+        [{v: [13, 0, 0], f: one+'1 pm'}, 6],
+        [{v: [13, 0, 0], f: time+' pm'}, 6]
+      ]);
+
+      var options = {
+        title: 'Traffic',
+        hAxis: {
+          title: 'Hour',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
