@@ -80,6 +80,7 @@ echo "</script>";
 
 ?>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <srcipt src="/src/chart.js"></script>
   <div id="chart_div"></div>
 <?php
 
