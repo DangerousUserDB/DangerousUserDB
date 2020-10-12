@@ -102,7 +102,24 @@ if ($result->num_rows > 0) {
     }
 }
 
+$time_now = time();
+
+$newtime = $time_now - 60;
+
+$sql = "SELECT * FROM `log` WHERE epoch > ${newtime}";
+$result = $conn->query($sql);
+
+$mi = 0;
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $mi = $mi + 1;
+    }
+}
+
 echo "<h3>Visits</h3>";
+echo "<strong><h4>Last Minute: " . $mi . "</h4></strong>";
+
 echo "<strong><h4>Last Hour: " . $timez . "</h4></strong>";
 
 echo "<strong><h4>Last 24 Hours: " . $times . "</h4></strong>";
