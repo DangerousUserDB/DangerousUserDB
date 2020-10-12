@@ -90,27 +90,7 @@ if ($result->num_rows > 0) {
         if($row["keya"] !== ""){
             break;
         }else{
-            function base64_rand() {
-                $chars = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_-";
-                $number1 = rand(1,62);
-                $number2 = $number1 - 1;
-                $letter = substr($chars, $number2, $number1);
-                return $letter[0];
-            }
-            $key = "0";
-            for ($x = 0; $x <= 50; $x++) {
-                $append = base64_rand();
-                $key .= $append;
-            }
-            $sql = "INSERT INTO keysa (discord_id, `keya`) VALUES ('${req_id}', '${key}')";
-            $result = $conn->query($sql);
-            $sql = "SELECT * FROM keys WHERE discord_id='${req_id}'";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<br><h3>API Key: <code>" . $row["keya"] . "</code></h3>";
-                }
-            }
+            
         }
     }
 }
