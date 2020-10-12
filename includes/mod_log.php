@@ -22,7 +22,7 @@ get an idea of our traffic and report bad requests.
 
 ========================================================================*/
 
-$access = fopen("access.log", "w") or die("Failed");
+$access = fopen("/access.log", "w") or die("Failed");
 
 if (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) $_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_CF_CONNECTING_IP'];
 
