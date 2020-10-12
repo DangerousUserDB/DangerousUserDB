@@ -30,6 +30,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+if($_SESSION["discord_id"] == ""){
+    die("Please sign in!");
+}
+
+$req_id = $_SESSION["discord_id"];
+
 function base64_rand() {
                 $chars = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_-";
                 $number1 = rand(1,62);
