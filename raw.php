@@ -38,11 +38,13 @@ if($_SESSION["discord_username"] == ""){
     die("To prevent abuse, please sign in.");
 }
 
-$sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
+$sql = "SELECT * FROM reports";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        
+        $reports = $row;
+        echo json_encode($row);
     }
 }
+
