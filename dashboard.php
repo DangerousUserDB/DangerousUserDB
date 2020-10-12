@@ -81,17 +81,14 @@ if($count == 0){
     echo "No reports yet!";
 }
 
+echo "<h3>API Keys</h3>";
+
 $sql = "SELECT * FROM keysa WHERE discord_id='${reqid}'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<br><h3>API Key: <code>" . $row["keya"] . "</code></h3>";
-        if($row["keya"] !== ""){
-            break;
-        }else{
-            
-        }
+        echo "<br><h3><code>" . $row["keya"] . "</code></h3>";
     }
 }
 
