@@ -72,7 +72,7 @@ echo "<strong><h4>" . $times . "</h4></strong>";
 $time_now = time() - 14400;
 $time = date("H", $time_now);
 
-echo '<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>';
+echo '<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>';
 echo "<br><h4>Traffic Statistics</h4>";
 echo "<script>";
 echo "var time = ${time};";
