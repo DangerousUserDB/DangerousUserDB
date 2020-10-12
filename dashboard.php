@@ -71,6 +71,7 @@ echo "<td><span class='badge badge-danger'>" . $row["cat"] . "</span></td>";
 echo "<td>" . $row["details"] . "</td>";
 echo "<td>" . date("m-d-y",$t) . "</td>";
 echo "</tr>";
+echo "<br><br>";
   }
 }
 
