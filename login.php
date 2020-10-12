@@ -16,6 +16,8 @@ limitations under the License.
 ========================================================================*/
 
 include "includes/header.php";
+include "includes/mod_log.php";
+
 
 $login_shutoff = "false";
 

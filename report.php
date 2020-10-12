@@ -15,6 +15,8 @@ limitations under the License.
 ========================================================================*/
 
 include "includes/header.php";
+include "includes/mod_log.php";
+
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();

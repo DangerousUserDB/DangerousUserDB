@@ -15,6 +15,8 @@ limitations under the License.
 ========================================================================*/
 
 include "includes/header.php";
+include "includes/mod_log.php";
+
 include "includes/apis.php";
 
 

@@ -15,6 +15,8 @@ limitations under the License.
 ========================================================================*/
 
 include "includes/header.php";
+include "includes/mod_log.php";
+
 ?>
 <h1>Remove Danerous Users From Your Server - Fast</h1>
 <h5>With our robust API, you will never have to worry about raids again</h5>
