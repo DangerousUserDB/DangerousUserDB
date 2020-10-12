@@ -24,6 +24,9 @@ if($login_shutoff == "true"){
     die("Login is not available at this time.");
 }
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 use Xwilarg\Discord\OAuth2;
 
 // CLIENT-ID-HERE: Replace this with the Client ID of the application
