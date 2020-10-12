@@ -91,6 +91,9 @@ if ($result->num_rows > 0) {
         echo "<br><h4><code>" . $row["keya"] . "</code></h4><br>";
     }
 }
+?>
+<a href="/newkey" target="_blank"><button class="btn btn-success" type="button">Create new API key</button></a>
+<?php
 
 
 include "includes/footer.php";
