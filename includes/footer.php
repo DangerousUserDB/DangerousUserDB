@@ -2,6 +2,6 @@
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
 <br>
 <center>
-<?php echo date("Y", time()) . " - <a href='//riverside.rocks'>Riverside Rocks</a> - <a href=<a href='https://github.com/DangerousUserDB/DangerousUserDB'>Github</a>";
+<?php echo date("Y", time()) . " - <a href='//riverside.rocks'>Riverside Rocks</a> - <a href='https://github.com/DangerousUserDB/DangerousUserDB'>Github</a>";
 ?>
 <br>
