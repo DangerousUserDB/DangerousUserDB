@@ -58,7 +58,7 @@ echo $desc;
 
 echo "<h3>Total Reports:</h3>";
 
-$sql = "SELECT * FROM `log` WHERE epoch > ${hours}";
+$sql = "SELECT * FROM `reports`";
 $result = $conn->query($sql);
 
 $times = 0;
