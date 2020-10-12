@@ -86,6 +86,7 @@ if ($result->num_rows > 0) {
     }
 }
 
+echo "<h3>Visits</h3>";
 echo "<strong><h4>Last 24 Hours: " . $times . "</h4></strong>";
 
 $days = $time_now - 604800;
