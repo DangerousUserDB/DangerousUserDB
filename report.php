@@ -45,7 +45,7 @@ $result = $conn->query($sql);
 <h2>File a Report</h2>
 <?php
 if(! $_SESSION["discord_username"]){
-  die("<h2>Please sign in to report!</h2>");
+  echo "<br>Reporting as Anonymous. Sign in for benefits like an API key!"; //die("<h2>Please sign in to report!</h2>");
 }else{
   echo "<br>Reporting as " . $_SESSION["discord_username"] . "<br>";
 }
