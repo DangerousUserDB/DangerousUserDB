@@ -29,6 +29,9 @@ if($_SERVER['REQUEST_METHOD'] !== "POST"){
 // The code from the report page, but its the backend only.
 
 if(isset($_POST["id"])){
+    if(! $_POST["key"]){
+        die("Missing API Key");
+    }
     /*======================
     |   Define Variables   |
     ======================*/
@@ -44,20 +47,7 @@ if(isset($_POST["id"])){
       $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_username"]));
     }
 
-    $cat = $conn -> real_escape_string(xss($_POST["cat"]));
-    /*====================
-    | Define Catagories  |
-    ====================*/
-    $cats = array(
-      "spam" => "0",
-      "trolling" => "0",
-      "mass-ads" => "0",
-      "grabbers" => "0",
-      "raid" => "0"
-    );
-    if($cats[$cat] !== "0"){
-      die("<br>400: Bad Request<br>");
-    }
+    $cat = $conn -> real_escape_string(xss("api-report"));
     $epoch = time();
     $details = $conn -> real_escape_string(xss($_POST["details"]));
     if (!ctype_digit($discord_id)) {
