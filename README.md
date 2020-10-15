@@ -4,6 +4,13 @@ Keep your eyes on bad discord users.
 
 https://discord.riverside.rocks
 
+## Screenshots
+
+![](https://riverside.rocks/i/5f8859c696ed0.png)
+
+
+![](https://riverside.rocks/i/5f8859d59592f.png)
+
 ## You will need:
 
 - Apache2 (you can run this on Nginx, but our main instance runs Apache)
