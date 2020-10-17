@@ -17,6 +17,17 @@ limitations under the License.
 
 include "includes/apis.php";
 
+/*
+
+Requirments for making a request to the report API:
+
+  - POST request
+  - API Key (key)
+  - User ID (id)
+  - Details (details)
+  - 
+
+*/
 
 if($_SERVER['REQUEST_METHOD'] !== "POST"){
     $mes = array(
