@@ -83,7 +83,7 @@ if(isset($_POST["id"])){
       }
     }
 
-    if($discord_reporter = ""){
+    if($discord_reporter == ""){
       $mes = array(
         "message" => "Error, invalid API key."
       );
