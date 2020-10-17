@@ -106,8 +106,7 @@ if(isset($_POST["id"])){
 
     $api = json_decode($resp, true);
 
-    $reporter_username = $conn -> real_escape_string(xss($api["username"]));
-    if($reporter_username == ""){
+    if($conn->real_escape_string(xss($api["username"])) == ""){
       $mes = array(
         "message" => "Error, invalid user."
       );
