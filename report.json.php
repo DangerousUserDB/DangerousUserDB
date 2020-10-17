@@ -36,49 +36,65 @@ if(isset($_POST["id"])){
     |   Define Variables   |
     ======================*/
     $discord_id = $conn -> real_escape_string(xss($_POST["id"]));
-    if(isset($_SESSION["discord_id"])){
-      $reporter_id = $conn -> real_escape_string(xss($_SESSION["discord_id"]));
-    }else{
-      $reporter_id = "0";
-    }
-    if($_SESSION["discord_username"] == ""){
-      $reporter_username = "Anonymous";
-    }else{
-      $reporter_username = $conn -> real_escape_string(xss($_SESSION["discord_username"]));
+    $post_key = $conn -> real_escape_string(xss($_POST["key"]));
+
+    $sql = "SELECT * FROM keysa WHERE keya='${post_key}'";
+    $result = $conn->query($sql);
+
+    if($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        $row["discord_id"] = $discord_reporter;
+        break;
+      }
     }
 
-    $cat = $conn -> real_escape_string(xss("api-report"));
-    $epoch = time();
-    $details = $conn -> real_escape_string(xss($_POST["details"]));
-    if (!ctype_digit($discord_id)) {
-        die("<br>Sorry, but that doesn't look like a valid discord ID. Please try again.");
-    }
-    if(!isset($discord_id)){
-      die("Bad Request");
+    if($discord_reporter = ""){
+      $mes = array(
+        "message" => "Error, invalid API key."
+      );
+      $send = json_encode($mes, true);
+      die($send);
     }
     $discord_token = $_ENV['BOT_TOKEN'];
 
-
     $curl = curl_init();
     curl_setopt_array($curl, [
-        CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_URL => "https://discord.com/api/v8/users/${discord_id}",
-        CURLOPT_USERAGENT => 'Dangerous User DB'
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_URL => "https://discord.com/api/v8/users/${id}",
+      CURLOPT_USERAGENT => 'Dangerous User DB'
     ]);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-        "Authorization: Bot ${discord_token}",
+      "Authorization: Bot ${discord_token}",
     ));
     $resp = curl_exec($curl);
     curl_close($curl);
 
     $api = json_decode($resp, true);
-    if($api["username"] == ""){
-        die("<br><br>User does not exsist. Perhaps they deleted their account?");
+
+    $reporter_username = $conn -> real_escape_string(xss($api["username"]));
+    if($reporter_username == ""){
+      $mes = array(
+        "message" => "Error, invalid user."
+      );
+      $send = json_encode($mes, true);
+      die($send);
     }
+
+    $cat = $conn -> real_escape_string(xss("api-report"));
+    $epoch = time();
+    $details = $conn -> real_escape_string(xss($_POST["details"]));
+
+    // Note, we don't halt the request here if there are not details. Details are
+    // not required for a report.
     
-    $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${reporter_id}', '${reporter_username}', '${cat}', '${details}', '${epoch}')";
+    $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${discord_reporter}', '${reporter_username}', '${cat}', '${details}', '${epoch}')";
     $result = $conn->query($sql);
 
+    $mes = array(
+      "message" => "Success"
+    );
+    $send = json_encode($mes, true);
+    die($send);
 }
 
 ?>
