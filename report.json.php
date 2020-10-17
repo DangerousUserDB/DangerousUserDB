@@ -43,7 +43,11 @@ if($_SERVER['REQUEST_METHOD'] !== "POST"){
 
 if(isset($_POST["id"])){
     if(! $_POST["key"]){
-        die("Missing API Key");
+      $mes = array(
+        "message" => "Error, this endpoint requires an API key."
+      );
+      $send = json_encode($mes, true);
+      die($send);
     }
     /*======================
     |   Define Variables   |
