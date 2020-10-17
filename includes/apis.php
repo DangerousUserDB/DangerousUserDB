@@ -56,11 +56,6 @@ function score($number)
     die();
 }
 
-function xss($text)
-{
-    return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
-}
-
 function rawscore($number)
 {
     $numbers = array(

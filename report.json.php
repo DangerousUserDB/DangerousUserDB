@@ -22,6 +22,11 @@ include "includes/apis.php";
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+function xss($text)
+{
+    return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+}
+
 $servername = $_ENV['MYSQL_SERVER'];
 $username = $_ENV["MYSQL_USERNAME"];
 $password = $_ENV["MYSQL_PASSWORD"];
