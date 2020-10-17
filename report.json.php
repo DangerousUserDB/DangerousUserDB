@@ -108,6 +108,12 @@ if(isset($_POST["id"])){
     );
     $send = json_encode($mes, true);
     die($send);
+}else{
+  $mes = array(
+    "message" => "Error, please include a user to report. Use the id parameter."
+  );
+  $send = json_encode($mes, true);
+  die($send);
 }
 
 ?>
