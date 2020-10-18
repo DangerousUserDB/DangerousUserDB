@@ -59,6 +59,10 @@ if($_SERVER['REQUEST_METHOD'] !== "POST"){
 
 // The code from the report page, but its the backend only.
 
+if(!isset($_POST)){
+  $_POST = $_GET;
+}
+
 if(isset($_POST["id"])){
     if(! $_POST["key"]){
       $mes = array(
