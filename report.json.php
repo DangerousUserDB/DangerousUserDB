@@ -78,12 +78,11 @@ if(isset($_POST["id"])){
 
     if($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        $row["discord_id"] = $discord_reporter;
         break;
       }
     }
 
-    if($discord_reporter == ""){
+    if($row["discord_id"] == ""){
       $mes = array(
         "message" => "Error, invalid API key."
       );
