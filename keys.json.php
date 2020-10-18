@@ -73,7 +73,7 @@ if($_GET["id"] == ""){
 
 $lookup = $conn -> real_escape_string(xss($_GET['id']));
 
-$sql = "SELECT * FROM reports";
+$sql = "SELECT * FROM keysa";
 $result = $conn->query($sql);
 
 $times = 0;
