@@ -49,13 +49,6 @@ Requirments for making a request to the report API:
 
 */
 
-if($_SERVER['REQUEST_METHOD'] !== "POST"){
-    $mes = array(
-        "message" => "Error, please use POST for this endpoint."
-    );
-    $send = json_encode($mes, true);
-    die($send);
-}
 
 // The code from the report page, but its the backend only.
 
