@@ -94,7 +94,7 @@ if(isset($_POST["id"])){
     // Note, we don't halt the request here if there are not details. Details are
     // not required for a report.
     
-    $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${discord_reporter}', '${reporter_username}', '${cat}', '${details}', '${epoch}')";
+    $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${discord_reporter}', '${discord_username}', '${cat}', '${details}', '${epoch}')";
     $result = $conn->query($sql);
 
     $mes = array(
