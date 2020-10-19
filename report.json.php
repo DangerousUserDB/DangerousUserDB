@@ -70,6 +70,14 @@ if(isset($_POST["id"])){
     $discord_id = $conn -> real_escape_string(xss($_POST["id"]));
     $post_key = $conn -> real_escape_string(xss($_POST["key"]));
 
+    if (!ctype_digit($discord_id)) {
+      $mes = array(
+        "message" => "Error, Discord IDs only contain digits."
+      );
+      $send = json_encode($mes, true);
+      die($send);
+    }
+
     $sql = "SELECT * FROM keysa WHERE keya='${post_key}'";
     $result = $conn->query($sql);
 
