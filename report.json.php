@@ -86,30 +86,6 @@ if(isset($_POST["id"])){
       $send = json_encode($mes, true);
       die($send);
     }
-    $discord_token = $_ENV['BOT_TOKEN'];
-
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-      CURLOPT_RETURNTRANSFER => 1,
-      CURLOPT_URL => "https://discord.com/api/v8/users/${id}",
-      CURLOPT_USERAGENT => 'Dangerous User DB'
-    ]);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-      "Authorization: Bot ${discord_token}",
-    ));
-    $resp = curl_exec($curl);
-    curl_close($curl);
-
-    $api = json_decode($resp, true);
-
-    if($api["username"] == ""){
-      $mes = array(
-        "message" => "Error, invalid user."
-      );
-      $send = json_encode($mes, true);
-      die($send);
-    }
-
     $cat = $conn -> real_escape_string(xss("api-report"));
     $epoch = time();
     $details = $conn -> real_escape_string(xss($_POST["details"]));
