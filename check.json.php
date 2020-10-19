@@ -106,6 +106,7 @@ if($times == "0"){
         die();
     }
      $return = array(
+         "username" => $api["username"],
          "reports" => $times,
          "score" => score($times, $last, $latest)
      );
@@ -113,6 +114,7 @@ if($times == "0"){
         die();
 }else{
     $return = array(
+        "username" => $api["username"],
          "reports" => $times,
          "score" => score($times, $last, $latest)
      );
