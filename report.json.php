@@ -89,7 +89,8 @@ if(isset($_POST["id"])){
     $cat = $conn -> real_escape_string(xss("api-report"));
     $epoch = time();
     $details = $conn -> real_escape_string(xss($_POST["details"]));
-
+    $apis = json_decode(file_get_contents("https://discord.riverside.rocks/check.json.php?id=" . $discord_reporter));
+    $discord_username = $conn -> real_escape_string(xss($apis["username"]));
     // Note, we don't halt the request here if there are not details. Details are
     // not required for a report.
     
