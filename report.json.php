@@ -52,7 +52,7 @@ Requirments for making a request to the report API:
 
 // The code from the report page, but its the backend only.
 
-if(!isset($_POST)){
+if($_SERVER['REQUEST_METHOD'] !== "POST"){
   $_POST = $_GET;
 }
 
