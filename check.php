@@ -72,13 +72,19 @@ $sql_discord = $conn -> real_escape_string($_GET["id"]);
 $sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
 $result = $conn->query($sql);
 
-$times = 0;
+$timez = array();
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        $times = $times + 1;
+        if(in_array($row["reporter_discord_id"], $timez)){
+            // Do nothing
+        }else{
+            array_push($timez, $row["reporter_discord_id"]);
+        }
     }
 }
+
+$times = count($timez);
 
 
 
