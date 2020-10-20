@@ -44,7 +44,7 @@ $sql = "INSERT INTO `log`(`discord_username`, `epoch`) VALUES ('${reporter_usern
 $result = $conn->query($sql);
 
 if($_SESSION["discord_username"] == ""){
-    die(header("Location: /"));
+    die(header("Location: /login"));
 }
 
 ?>
