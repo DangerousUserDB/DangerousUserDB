@@ -66,13 +66,21 @@ $sql_discord = $conn -> real_escape_string($_GET["id"]);
 $sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
 $result = $conn->query($sql);
 
-$times = 0;
+$timez = array();
+$total = 0;
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        $times = $times + 1;
+        $total = $total + 1;
+        if(in_array($row["reporter_discord_id"], $timez)){
+            // Do nothing
+        }else{
+            array_push($timez, $row["reporter_discord_id"]);
+        }
     }
 }
+
+$times = count($timez);
 
 $sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}' ORDER BY epoch ASC";
 $result = $conn->query($sql);
@@ -108,6 +116,7 @@ if($times == "0"){
      $return = array(
          "username" => $api["username"],
          "reports" => $times,
+         "total_reports" => $total,
          "score" => score($times, $last, $latest)
      );
     echo json_encode($return, true);
@@ -116,6 +125,7 @@ if($times == "0"){
     $return = array(
         "username" => $api["username"],
          "reports" => $times,
+         "total_reports" => $total,
          "score" => score($times, $last, $latest)
      );
     echo json_encode($return, true);

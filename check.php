@@ -73,9 +73,11 @@ $sql = "SELECT * FROM reports WHERE discord_id='${sql_discord}'";
 $result = $conn->query($sql);
 
 $timez = array();
+$total = 0;
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
+        $total = $total + 1;
         if(in_array($row["reporter_discord_id"], $timez)){
             // Do nothing
         }else{
@@ -97,7 +99,7 @@ if($times == "0"){
     $message = "All clear! Nothing looks wrong!";
 }else{
     $symbol = '<i class="fas fa-radiation-alt fa-5x" style="color:red;font-size:18px;"></i>'; 
-    $message = "Warning: We have recived ${times} report(s) about this user.";
+    $message = "Warning: We have recived ${total} report(s) about this user.";
     if($api["username"] == ""){
         ?>
         <script type="text/javascript">
