@@ -24,6 +24,12 @@ if($login_shutoff == "true"){
     die("Login is not available at this time.");
 }
 
+// Check if the user has already logged in, if so, send them to the dash page
+
+if($_SESSION["discord_username"] !== ""){
+    header("Location: /dashboard");
+}
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
