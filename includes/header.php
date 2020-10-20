@@ -48,6 +48,13 @@ echo $font_awesome_kit;
 <meta name="language" content="EN">
 </head>
 <body onload="halfmoon.toggleDarkMode()">
+<?php
+if($_COOKIE["bot"] !== "seen"){
+  echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+  echo '<script src="/src/bot.js"></script>';
+  $_COOKIE["bot"] == "seen";
+}
+?>
 <center>
 <div class="page-wrapper with-navbar">
     <!-- Navbar (immediate child of the page wrapper) -->
