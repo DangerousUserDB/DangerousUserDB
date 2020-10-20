@@ -125,7 +125,7 @@ if($times == "0"){
     <div class="card">
         <h2 class="card-title">
         <?php
-    echo "<h3>${times} - Total Reports</h3><br>${symbol}";
+    echo "<h3>${total} - Total Reports</h3><br>${symbol}";
     if($times !== "0"){
         $score = rawscore($times);
         ?>
