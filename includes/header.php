@@ -47,16 +47,20 @@ echo $font_awesome_kit;
 <meta name="robots" content="index, follow">
 <meta name="language" content="EN">
 </head>
-<body onload="halfmoon.toggleDarkMode()">
 <?php
 if(!isset($_COOKIE["bot"])){
   echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-  echo '<script src="/src/bot.js">alertBot();</script>';
+  echo '<script src="/src/bot.js"></script>';
+  $onload = "alertBot()";
   $cookie_name = "bot";
   $cookie_value = "seen";
   setcookie($cookie_name, $cookie_value, time() + (864000 * 30), "/");
+}else{
+  $onload = "halfmoon.toggleDarkMode()";
 }
+echo "<body onload='${onload}'>";
 ?>
+
 <center>
 <div class="page-wrapper with-navbar">
     <!-- Navbar (immediate child of the page wrapper) -->
