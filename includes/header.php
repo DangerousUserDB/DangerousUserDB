@@ -49,10 +49,12 @@ echo $font_awesome_kit;
 </head>
 <body onload="halfmoon.toggleDarkMode()">
 <?php
-if($_COOKIE["bot"] !== "seen"){
+if(!isset($_COOKIE["bot"])){
   echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-  echo '<script src="/src/bot.js"></script>';
-  $_COOKIE["bot"] == "seen";
+  echo '<script src="/src/bot.js">alertBot();</script>';
+  $cookie_name = "bot";
+  $cookie_value = "seen";
+  setcookie($cookie_name, $cookie_value, time() + (864000 * 30), "/");
 }
 ?>
 <center>
