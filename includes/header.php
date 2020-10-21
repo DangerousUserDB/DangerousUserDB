@@ -16,7 +16,7 @@ limitations under the License.
 session_start();
 
 require 'vendor/autoload.php';
-require '/Stylus.php';
+require 'Stylus.php';
 
 // IMPORTANT CONFIGURATION!!!!!
 
