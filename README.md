@@ -55,6 +55,11 @@ The total number of reports filed against a user.
 
 The total number of users that have reported an account.
 
+## API
+
+### See /docs/index.php on your instance
+
+
 ## Steps taken to prevent abuse
 
 Recently we changed up how we count reports. In an older version of this software, we counted the abuse score by the number of reports. If there where three reports by anonymous users and one report by Riverside Rocks, we would count four reports, and give the account in question an abuse score of ~40%.
