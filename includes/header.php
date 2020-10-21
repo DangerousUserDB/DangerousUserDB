@@ -16,19 +16,21 @@ limitations under the License.
 session_start();
 
 require 'vendor/autoload.php';
+/*
 require 'Stylus.php';
-
+*/
 // IMPORTANT CONFIGURATION!!!!!
 
 $location = "/var/www/discord/"; // Replace this with your document root.
 $font_awesome_kit = '<script src="https://kit.fontawesome.com/281a5c53f1.js" crossorigin="anonymous"></script>';
-
+/*
 $stylus = new Stylus();
 $stylus->setReadDir('read');
 $stylus->setWriteDir('write');
 $stylus->setImportDir('import');
 $stylus->fromFile("/stl/main.styl")->toFile("/out/main.css");
 $stylus->parseFiles();
+*/
 
 
 function xss($text) {
