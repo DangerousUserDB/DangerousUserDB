@@ -27,7 +27,7 @@ $stylus = new Stylus();
 $stylus->setReadDir('read');
 $stylus->setWriteDir('write');
 $stylus->setImportDir('import');
-$stylus->fromFile("in.styl")->toFile("/out/main.css");
+$stylus->fromFile("/stl/main.styl")->toFile("/out/main.css");
 $stylus->parseFiles();
 
 
