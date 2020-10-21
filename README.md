@@ -41,6 +41,20 @@ SOURCE installers/3.sql;
 
 You are all set! Happy reporting!
 
+## Terminology
+
+### Abuse Score
+
+The score based upon the number of reports a user recives.
+
+### Total Reports
+
+The total number of reports filed against a user.
+
+### Reports
+
+The total number of users that have reported an account.
+
 ## Steps taken to prevent abuse
 
 Recently we changed up how we count reports. In an older version of this software, we counted the abuse score by the number of reports. If there where three reports by anonymous users and one report by Riverside Rocks, we would count four reports, and give the account in question an abuse score of ~40%.
