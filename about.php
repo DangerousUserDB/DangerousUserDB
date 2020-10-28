@@ -139,6 +139,21 @@ if ($result->num_rows > 0) {
 
 echo "<strong><h4>Last 7 Days: " . $times . "</h4></strong>";
 
+$sql = "SELECT * FROM `log`";
+$result = $conn->query($sql);
+
+$times = 0;
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $times = $times + 1;
+    }
+}
+
+echo "<strong><h4>All time: " . $times . "</h4></strong>";
+
+
+
 ?>
 
 <?php
