@@ -115,7 +115,9 @@ echo $font_awesome_kit;
     <div class="content-wrapper">
 
 <h2>API Documentation</h2>
-
+<br>
+      <p>New! Check out our NodeJS <a href="https://www.npmjs.com/package/dudb.js">API wrapper</a>.</p>
+      <br>
 <table class="table">
   <thead>
     <tr>
