@@ -29,7 +29,8 @@ if ($conn->connect_error) {
 }
 
 if($_GET["id"] == ""){
-   $errors = array(
+        header("HTTP/1.1 400 Bad Request");
+    $errors = array(
        "Message" => "Missing ID Parameter",
        "Code" => "401"
        );
@@ -106,6 +107,7 @@ if ($result->num_rows > 0) {
 
 if($times == "0"){
     if($api["username"] == ""){
+        header("HTTP/1.1 400 Bad Request");
         $errors = array(
        "Message" => "Discord API: User Does Not Exsist",
        "Code" => "400"
