@@ -58,6 +58,7 @@ if($_SERVER['REQUEST_METHOD'] !== "POST"){
 
 if(isset($_POST["id"])){
     if(! $_POST["key"]){
+      header("HTTP/1.1 401 Unauthorized");
       $mes = array(
         "message" => "Error, this endpoint requires an API key."
       );
@@ -71,6 +72,7 @@ if(isset($_POST["id"])){
     $post_key = $conn -> real_escape_string(xss($_POST["key"]));
 
     if (!ctype_digit($discord_id)) {
+      header("HTTP/1.1 400 Bad Request");
       $mes = array(
         "message" => "Error, Discord IDs only contain digits."
       );
@@ -88,6 +90,7 @@ if(isset($_POST["id"])){
     }
 
     if($row["discord_id"] == ""){
+      header("HTTP/1.1 401 Unauthorized");
       $mes = array(
         "message" => "Error, invalid API key."
       );
@@ -112,6 +115,7 @@ if(isset($_POST["id"])){
     $send = json_encode($mes, true);
     die($send);
 }else{
+  header("HTTP/1.1 400 Bad Request");
   $mes = array(
     "message" => "Error, please include a user to report. Use the id parameter."
   );
