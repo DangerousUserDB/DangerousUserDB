@@ -137,7 +137,7 @@ echo $font_awesome_kit;
       <td>No</td>
     </tr>
     <tr>
-      <th>POST</th>
+      <th>GET or POST</th>
       <td>/report.json.php</td>
       <td>id, key, details</td>
       <td>Report a user.</td>
