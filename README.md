@@ -6,10 +6,7 @@ https://discord.riverside.rocks
 
 ## Screenshots
 
-![](https://riverside.rocks/i/5f8859c696ed0.png)
-
-
-![](https://riverside.rocks/i/5f8859d59592f.png)
+(none right now, the website is up if you would like to try it out)
 
 ## You will need:
 
