@@ -143,3 +143,10 @@ echo $font_awesome_kit;
       <td>Report a user.</td>
       <td>Yes</td>
     </tr>
+    <tr>
+      <th>GETT</th>
+      <td>/stats.json.php</td>
+      <td>(no params)</td>
+      <td>Get basic website statistics</td>
+      <td>Yes</td>
+    </tr>
