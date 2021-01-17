@@ -153,7 +153,7 @@ echo $font_awesome_kit;
      <tr>
       <th>GET or POST</th>
       <td>/delete.json.php</td>
-      <td>token</td>
+      <td>key</td>
       <td>Delete all reports from your account (BETA)</td>
       <td>Yes</td>
     </tr>
