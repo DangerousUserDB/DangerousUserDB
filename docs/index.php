@@ -133,7 +133,7 @@ echo $font_awesome_kit;
       <th>GET</th>
       <td>/check.json.php</td>
       <td>id</td>
-      <td>Check the status of a user.</td>
+      <td>Check the status of a user. (doesn't requrie an API key, please don't send more than 6 requests a minute.)</td>
       <td>No</td>
     </tr>
     <tr>
@@ -144,9 +144,16 @@ echo $font_awesome_kit;
       <td>Yes</td>
     </tr>
     <tr>
-      <th>GETT</th>
+      <th>GET</th>
       <td>/stats.json.php</td>
       <td>(no params)</td>
       <td>Get basic website statistics</td>
+      <td>Yes</td>
+    </tr>
+     <tr>
+      <th>GET or POST</th>
+      <td>/delete.json.php</td>
+      <td>token</td>
+      <td>Delete all reports from your account (BETA)</td>
       <td>Yes</td>
     </tr>
