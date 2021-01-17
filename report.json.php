@@ -16,6 +16,7 @@ limitations under the License.
 ========================================================================*/
 
 header("Content-type: application/json");
+header("Access-Control-Allow-Origin: *");
 
 include "includes/apis.php";
 
