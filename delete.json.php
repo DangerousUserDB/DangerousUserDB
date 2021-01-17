@@ -35,17 +35,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if($_GET["token"])
+if($_GET["key"])
 {
-    $token = $_GET["token"];
+    $token = $_GET["key"];
 }else{
-    $token = $_POST["token"];
+    $token = $_POST["key"];
 }
 
 if(!$token){
       header("HTTP/1.1 401 Unauthorized");
       $mes = array(
-        "message" => "Error, this endpoint requires an API key. Please either POST or GET your token."
+        "message" => "Error, this endpoint requires an API key. Please either POST or GET your key."
       );
       $send = json_encode($mes, true);
       die($send);
