@@ -56,7 +56,7 @@ echo "<h2>About Us</h2>";
 echo $desc;
 
 
-echo "<h3>Total Reports:</h3>";
+//echo "<h3>Total Reports:</h3>";
 
 $sql = "SELECT * FROM `reports`";
 $result = $conn->query($sql);
@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-echo "<strong><h4>" . $times . "</h4></strong><br>";
+//echo "<strong><h4>" . $times . "</h4></strong><br>";
 
 $time_now = time();
 
