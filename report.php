@@ -113,7 +113,9 @@ if(isset($_POST["id"])){
       "trolling" => "0",
       "mass-ads" => "0",
       "grabbers" => "0",
-      "raid" => "0"
+      "raid" => "0",
+      "harrassment" => "0",
+      "other" => "0"
     );
     if($cats[$cat] !== "0"){
       die("<br>400: Bad Request<br>");
