@@ -68,10 +68,12 @@ if(! $_SESSION["discord_username"]){
     <label for="languages" class="required">Abuse Type</label>
     <select class="form-control" id="cat" name="cat" multiple="multiple" required="required" size="5">
       <option value="spam">Spam</option>
-      <option value="mass-ads">Mass Ads</option>
+      <option value="mass-ads">Mass Advertiements</option>
       <option value="trolling">Trolling</option>
       <option value="raid">Raid</option>
       <option value="grabbers">IP Grabbers</option>
+      <option value="harrassment">Harrassment</option>
+      <option value="other">Other</option>
     </select>
   </div>
 
@@ -111,7 +113,9 @@ if(isset($_POST["id"])){
       "trolling" => "0",
       "mass-ads" => "0",
       "grabbers" => "0",
-      "raid" => "0"
+      "raid" => "0",
+      "harrassment" => "0",
+      "other" => "0"
     );
     if($cats[$cat] !== "0"){
       die("<br>400: Bad Request<br>");
