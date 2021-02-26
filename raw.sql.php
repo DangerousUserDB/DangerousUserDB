@@ -23,5 +23,5 @@ $username = $_ENV["MYSQL_USERNAME"];
 $password = $_ENV["MYSQL_PASSWORD"];
 $dbname = $_ENV["MYSQL_DATABASE"];
 
-echo system("mysqldump -u " + $servername + " -p " + $password + "--databases " + $dbname + " reports > history/" + date("Y-m-d") + ".sql");
+echo system("mysqldump -u " + $servername + " -p " + $password + "--databases " + $dbname + " reports");
 ?>
