@@ -28,7 +28,9 @@ If you do not have composer, you get download it here:
 
 https://getcomposer.org
 
-Finnaly, set your tables. Be sure that these are under the `discord` database. You can always change this in the .env file.
+Now, create a `history` folder by running `mkdir history`
+
+Finally, set your tables. Be sure that these are under the `discord` database. You can always change this in the .env file.
 
 ```
 SOURCE installers/1.sql;
