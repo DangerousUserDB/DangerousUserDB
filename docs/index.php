@@ -133,7 +133,7 @@ echo $font_awesome_kit;
       <th>GET</th>
       <td>/check.json.php</td>
       <td>id</td>
-      <td>Check the status of a user. (doesn't requrie an API key, please don't send more than 6 requests a minute.)</td>
+      <td>Check the status of a user. (doesn't require an API key, please don't send more than 6 requests a minute)</td>
       <td>No</td>
     </tr>
     <tr>
