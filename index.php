@@ -96,6 +96,25 @@ $result = $conn->query($sql);
 </div>
 </div>
 </div>
+    <h3>Recently reported users</h3>
+    <table class="table"><tbody>
+    <tr>
+    <?php
+$sql = "SELECT * FROM reports ORDER BY epoch DESC LIMIT 3";
+$result = $conn->query($sql);
+
+$timez = array();
+$total = 0;
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+       echo "<th><a href='" . htmlspecialchars($row["discord_id"]) . "'>" . htmlspecialchars($row["discord_id"]) . "</a></th>";
+    }
+}
+        ?>
+        </tr>
+        </tbody>
+    </table>
 </center>
 <?php
 include "includes/footer.php";
