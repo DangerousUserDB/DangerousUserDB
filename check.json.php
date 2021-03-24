@@ -107,6 +107,8 @@ if ($result->num_rows > 0) {
     }
 }
 
+$score = score($times, $last, $latest);
+
 if(in_array($id, $whitelist))
         {
             $score = 0;
@@ -126,7 +128,7 @@ if($times == "0"){
          "username" => $api["username"],
          "reports" => $times,
          "total_reports" => $total,
-         "score" => score($times, $last, $latest)
+         "score" => $score
      );
     echo json_encode($return, true);
         die();
@@ -136,7 +138,7 @@ if($times == "0"){
         "username" => $api["username"],
          "reports" => $times,
          "total_reports" => $total,
-         "score" => score($times, $last, $latest)
+         "score" => $score
      );
     echo json_encode($return, true);
         die();
