@@ -42,6 +42,7 @@ if($_GET["id"] == ""){
 $id = $_GET["id"];
 $discord_token = $_ENV['BOT_TOKEN'];
 
+$whitelist = json_decode(file_get_contents("/var/www/discord/whitelist.json"), true);
 
 $curl = curl_init();
 curl_setopt_array($curl, [
@@ -125,6 +126,10 @@ if($times == "0"){
     echo json_encode($return, true);
         die();
 }else{
+    if(in_array($id, $whitelist))
+        {
+            $score = 0;
+        }
     $return = array(
         "username" => $api["username"],
          "reports" => $times,
