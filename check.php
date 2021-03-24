@@ -32,7 +32,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$whitelist = json_decode(file_get_contents("/whitelist.json"), true);
+$whitelist = json_decode(file_get_contents("/var/www/discord/whitelist.json"), true);
 
 if($_SESSION["discord_username"] == ""){
     $reporter_username = "Anonymous";
