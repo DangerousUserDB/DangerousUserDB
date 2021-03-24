@@ -107,6 +107,11 @@ if ($result->num_rows > 0) {
     }
 }
 
+if(in_array($id, $whitelist))
+        {
+            $score = 0;
+        }
+
 if($times == "0"){
     if($api["username"] == ""){
         header("HTTP/1.1 400 Bad Request");
@@ -126,10 +131,7 @@ if($times == "0"){
     echo json_encode($return, true);
         die();
 }else{
-    if(in_array($id, $whitelist))
-        {
-            $score = 0;
-        }
+    
     $return = array(
         "username" => $api["username"],
          "reports" => $times,
