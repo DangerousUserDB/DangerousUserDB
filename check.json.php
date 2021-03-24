@@ -111,7 +111,7 @@ $score = score($times, $last, $latest);
 
 if(in_array($id, $whitelist))
         {
-            $score = 0;
+            $score = "0%";
         }
 
 if($times == "0"){
