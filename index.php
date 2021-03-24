@@ -41,7 +41,7 @@ $sql = "INSERT INTO `log`(`discord_username`, `epoch`) VALUES ('${reporter_usern
 $result = $conn->query($sql);
 
 ?>
-<h1>Remove Danerous Users From Your Server - Fast</h1>
+<h1>Remove Dangerous Users From Your Server - Fast</h1>
 <h5>With our robust API, you will never have to worry about raids again</h5>
 <div class="container-fluid">
   <div class="row">
