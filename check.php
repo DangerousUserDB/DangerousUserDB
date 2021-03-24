@@ -32,6 +32,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$whitelist = json_decode(file_get_contents("https://discord.riverside.rocks/whitelist.json.php"), true);
+
 if($_SESSION["discord_username"] == ""){
     $reporter_username = "Anonymous";
   }else{
@@ -128,11 +130,17 @@ if($times == "0"){
     echo "<h3>${total} - Total Reports</h3><br>${symbol}";
     if($times !== "0"){
         $score = rawscore($times);
+        if(in_array($id, $whitelist))
+        {
+            $whitelisted = true;
+            $score = 0;
+        }
         ?>
 
 <?php echo "<h3>Abuse Score: ${score}%</h3>"; ?>
   <?php echo "<br><div class='progress'><div class='progress-bar' role='progressbar' style='width: ${score}%' aria-valuenow='${score}' aria-valuemin='0' aria-valuemax='100'></div></div><br>"; ?>
   <?php echo "<a href='/report?id=${sql_discord}'>" ?><button class="btn btn-danger" type="button">Report this user</button></a>
+  <?php if($whitelisted){ echo "<br><i>Note: This user is in our whitelist. We belive that this is a harmless user.</i>"; ?>
 </div>
         <?php
     }
