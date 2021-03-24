@@ -108,7 +108,7 @@ $total = 0;
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-       echo "<th><a href='" . htmlspecialchars($row["discord_id"]) . "'>" . htmlspecialchars($row["discord_id"]) . "</a></th>";
+       echo "<th><a href='/check?id=" . htmlspecialchars($row["discord_id"]) . "&ref=homepage'>" . htmlspecialchars($row["discord_id"]) . "</a></th>";
     }
 }
         ?>
