@@ -157,3 +157,10 @@ echo $font_awesome_kit;
       <td>Delete all reports from your account (BETA)</td>
       <td>Yes</td>
     </tr>
+      <tr>
+      <th>GET</th>
+      <td>/whitelist.json</td>
+      <td>(no params)</td>
+      <td>View our static user whitelist</td>
+      <td>Yes</td>
+    </tr>
