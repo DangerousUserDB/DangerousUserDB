@@ -56,7 +56,7 @@ The total number of users that have reported an account.
 
 ## API
 
-### See /docs/index.php on your instance
+See /docs/index.php on your instance, or click [here](https://discord.riverside.rocks/docs/index.php)
 
 
 ## Steps taken to prevent abuse
