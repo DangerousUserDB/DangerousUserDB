@@ -42,6 +42,7 @@ $sql = "INSERT INTO `log`(`discord_username`, `epoch`) VALUES ('${reporter_usern
 $result = $conn->query($sql);
 
 ?>
+<script src="https://hcaptcha.com/1/api.js" async defer></script>
 <h2>File a Report</h2>
 <?php
 if(! $_SESSION["discord_username"]){
