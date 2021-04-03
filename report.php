@@ -85,10 +85,27 @@ if(! $_SESSION["discord_username"]){
         <i>By submitting this form, I understand that this is not run by Discord staff and thus accounts reported here will not be taken down. This is simply a tool to warn other server owners about malicous users.</i>
         <br>
         <!-- Submit button -->
+  <div class="h-captcha" data-sitekey="c8b1b420-5438-4cb5-80fc-32794156c0ee"></div>
   <input class="btn btn-primary" type="submit" value="Submit">
 </form>
 <?php
 if(isset($_POST["id"])){
+    /******************
+    Anti Spam Crap
+    *******************/
+    $dataz = array(
+    'secret' => $_ENV["CAPTCHA"],
+    'response' => $_POST['h-captcha-response']
+    );
+    $verify = curl_init();
+    curl_setopt($verify, CURLOPT_URL, "https://hcaptcha.com/siteverify");
+    curl_setopt($verify, CURLOPT_POST, true);
+    curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($dataz));
+    curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($verify);
+    $responseData = json_decode($response, true);
+    if($responseData["success"]) {
+        
     /*======================
     |   Define Variables   |
     ======================*/
@@ -152,6 +169,9 @@ if(isset($_POST["id"])){
     $result = $conn->query($sql);
     header("Location: /check?id=${discord_id}");
     die();
+    }else{
+        
+        die("Whoops, could you try the captcha again?");
     }
 
     include "includes/footer.php";
