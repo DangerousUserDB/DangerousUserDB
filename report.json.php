@@ -71,7 +71,9 @@ if(isset($_POST["id"])){
     ======================*/
     $discord_id = $conn -> real_escape_string(xss($_POST["id"]));
     $post_key = $conn -> real_escape_string(xss($_POST["key"]));
-
+    
+    
+    
     if (!ctype_digit($discord_id)) {
       header("HTTP/1.1 400 Bad Request");
       $mes = array(
@@ -106,6 +108,28 @@ if(isset($_POST["id"])){
     $discord_username = $conn -> real_escape_string(xss($apis["username"]));
     // Note, we don't halt the request here if there are not details. Details are
     // not required for a report.
+    
+    $sql = "SELECT * FROM reports WHERE discord_id='${discord_id}' AND reporter_discord_id='${discord_reporter}' ORDER BY epoch DESC";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $last_time = $row["epoch"];
+        }
+    }
+    
+    $t = time();
+    $split = $t - $last_time;
+    
+    if($split < 600)
+    {
+        header("HTTP/1.1 429 Too Many Requests");
+        $mes = array(
+            "message" => "You can only report a user every 10 minutes."
+          );
+          $send = json_encode($mes, true);
+          die($send);
+    }
     
     $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${discord_reporter}', '${discord_username}', '${cat}', '${details}', '${epoch}')";
     $result = $conn->query($sql);
