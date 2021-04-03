@@ -125,7 +125,8 @@ if(isset($_POST["id"])){
     {
         header("HTTP/1.1 429 Too Many Requests");
         $mes = array(
-            "message" => "You can only report a user every 10 minutes."
+            "message" => "You can only report a user every 10 minutes.",
+            "success" => "false"
           );
           $send = json_encode($mes, true);
           die($send);
