@@ -177,6 +177,7 @@ echo $font_awesome_kit;
       <li><a href="https://github.com/GoldenCredit101/DangerousUserPrevention">DangerousUserPrevention (Discord bot to kick users when abuse score is too high)</a></li>
       <li><a href="https://github.com/ausername-1/Dangerous-Users">Dangerous Users (DDUB Desktop Client)</a></li>
       <li><a href="https://www.npmjs.com/package/dangeroususers">Node.js API Wrapper</a></li>
+      <li><a href="https://github.com/Stylix58/du.py">Python API Wrapper</a></li>
     </ul>
       
       
