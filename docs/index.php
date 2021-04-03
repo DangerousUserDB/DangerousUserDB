@@ -166,3 +166,18 @@ echo $font_awesome_kit;
     </tr>
 <br>
     <p>If you would like to test the API, you can always report ID 466262009256869889 (thats me!)</p>
+<br>
+<br>
+    <h2>
+      Community Projects
+    </h2>
+    Fans of our project have created projects and API wrappers of their own. Here are some of our favorites.
+    
+    <ul>
+      <li><a href="https://github.com/GoldenCredit101/DangerousUserPrevention">DangerousUserPrevention (Discord bot to kick users when abuse score is too high)</a></li>
+      <li><a href="https://github.com/ausername-1/Dangerous-Users">Dangerous Users (DDUB Desktop Client)</a></li>
+      <li><a href="https://www.npmjs.com/package/dangeroususers">Node.js API Wrapper</a></li>
+    </ul>
+      
+      
+      
