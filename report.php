@@ -172,4 +172,5 @@ if(isset($_POST["id"])){
     }else{
         die("Whoops, could you try the captcha again?");
     }
+}
     include "includes/footer.php";
