@@ -12,4 +12,9 @@ RewriteRule ^config.php$ / [F,L]
 RewriteRule ^storage/(.*)?$ / [F,L]
 RewriteRule ^vendor/(.*)?$ / [F,L]
 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^/?check/(.*?)/?$ /check.php?id=$1 [L]
+RewriteRule ^/?report/(.*?)/?$ /report.php?id=$1 [L]
+
 php_value session.gc_maxlifetime 600000
