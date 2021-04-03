@@ -1,0 +1,7 @@
+{
+    "require": {
+        "vlucas/phpdotenv": "^5.2",
+        "josegonzalez/dotenv": "dev-master",
+        "xwilarg/discord-oauth2-php": "^1.5"
+    }
+}
