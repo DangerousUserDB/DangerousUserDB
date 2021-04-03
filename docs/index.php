@@ -148,7 +148,7 @@ echo $font_awesome_kit;
       <td>/stats.json.php</td>
       <td>(no params)</td>
       <td>Get basic website statistics</td>
-      <td>Yes</td>
+      <td>No</td>
     </tr>
      <tr>
       <th>GET or POST</th>
@@ -162,5 +162,7 @@ echo $font_awesome_kit;
       <td>/whitelist.json</td>
       <td>(no params)</td>
       <td>View our static user whitelist</td>
-      <td>Yes</td>
+      <td>No</td>
     </tr>
+<br>
+    <p>If you would like to test the API, you can always report ID 466262009256869889 (thats me!)</p>
