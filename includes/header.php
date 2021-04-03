@@ -53,7 +53,7 @@ echo $font_awesome_kit;
 <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/css/halfmoon-variables.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/js/halfmoon.min.js"></script>
 <meta name="description" content=" Report + Check Dangerous Users on Discord with ease. ">
-<meta name="keywords" content="discord">
+<meta name="keywords" content="discord, database">
 <meta name="robots" content="index, follow">
 <meta name="language" content="EN">
 </head>
@@ -105,7 +105,7 @@ echo "<body onload='${onload}'>";
             <a href="/docs/index.php" class="nav-link">API Docs</a>
         </li>
         <li class="nav-item">
-            <a href="//riverside.rocks/community" class="nav-link">Community</a>
+            <a href="//riverside.rocks/discord" class="nav-link">Community</a>
         </li>
       </ul>
       <form class="form-inline d-none d-md-flex ml-auto" action="/check" method="get"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
@@ -123,7 +123,7 @@ echo "<body onload='${onload}'>";
             <a href="/report" class="dropdown-item">Report</a>
             <a href="/about" class="dropdown-item">About Us</a>
             <a href="/docs/index.php" class="dropdown-item">API Docs</a>
-            <a href="//riverside.rocks/community" class="dropdown-item">Community</a>
+            <a href="//riverside.rocks/discord" class="dropdown-item">Community</a>
             <div class="dropdown-divider"></div>
             <div class="dropdown-content">
               <form action="/check" method="get">
