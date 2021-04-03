@@ -64,3 +64,11 @@ The total number of users that have reported an account.
 Recently we changed up how we count reports. In an older version of this software, we counted the abuse score by the number of reports. If there where three reports by anonymous users and one report by Riverside Rocks, we would count four reports, and give the account in question an abuse score of ~40%.
 
 The issue with the old system was it was prone to abuse. For example, an anonymous user could file 10 reports and easily give the account in question an abuse score of 100%. In the new system, this was fixed by counting reports by unique user. 3 anonymous reports and 1 report from a signed in user now counts as 2 reports and would give an abuse score of ~20%.
+
+We also use captchas on the web client and ratelimiting on our API to prevent abuse.
+
+## Database Dumps
+
+From time to time we dump the contents of our database. Check out our latest one(s):
+
+[4/3/21](https://cdn.riverside.rocks/a/answer-brisket-slime.sql)
