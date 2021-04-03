@@ -6,8 +6,8 @@ https://discord.riverside.rocks
 
 ## Screenshots
 
-(none right now, the website is up if you would like to try it out)
-
+![](https://cdn.riverside.rocks/a/nail-shelf-height.gif)
+![](https://cdn.riverside.rocks/a/meter-cardigan-nape.png)
 ## You will need:
 
 - Apache2 (you can run this on Nginx, but our main instance runs Apache)
