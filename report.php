@@ -170,7 +170,7 @@ if(isset($_POST["id"])){
         //$locale = $conn -> real_escape_string(xss($_SERVER["HTTP_CF_IPCOUNTRY"])); // MUST HAVE CLOUDFLARE
         //$v = "US"; // debug
         //die("${discord_id} - ${reporter_id} - ${reporter_username} - ${cat} - ${details} - ${epoch} - ${locale}");
-        $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${reporter_id}', '${reporter_username}', '${cat}', '${details}', '${epoch})";
+        $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch) VALUES ('${discord_id}', '${reporter_id}', '${reporter_username}', '${cat}', '${details}', '${epoch}')";
         $result = $conn->query($sql);
         header("Location: /check?id=${discord_id}");
         die();
