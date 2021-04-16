@@ -131,7 +131,7 @@ if(isset($_POST["id"])){
           $send = json_encode($mes, true);
           die($send);
     }
-    $locale =  real_escape_string(xss($_SERVER["HTTP_CF_IPCOUNTRY"])); // MUST HAVE CLOUDFLARE
+    $locale = $conn -> real_escape_string(xss($_SERVER["HTTP_CF_IPCOUNTRY"])); // MUST HAVE CLOUDFLARE
     $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch, locale) VALUES ('${discord_id}', '${discord_reporter}', '${discord_username}', '${cat}', '${details}', '${epoch}', '${locale}')";
     $result = $conn->query($sql);
 
