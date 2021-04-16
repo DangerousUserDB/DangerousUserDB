@@ -164,7 +164,7 @@ if($times == "0"){
         while($row = $result->fetch_assoc()) {
             $t = $row["epoch"];
             echo "<tr>";
-      echo "<th><img src='https://cdn.glitch.com/2bf9c0be-400b-44c0-a3f7-277cfc7822f4%2Fblank.gif?v=1618519578835' class='flag flag-" . strtolower($row["locale"]) . "'/></th>";
+      //echo "<th><img src='https://cdn.glitch.com/2bf9c0be-400b-44c0-a3f7-277cfc7822f4%2Fblank.gif?v=1618519578835' class='flag flag-" . strtolower($row["locale"]) . "'/></th>";
       echo "<th>" . $row["reporter_discord_username"] . "</th>";
       echo "<td><span class='badge badge-danger'>" . $row["cat"] . "</span></td>";
       echo "<td>" . $row["details"] . "</td>";
