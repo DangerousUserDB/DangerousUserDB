@@ -167,7 +167,8 @@ if(isset($_POST["id"])){
         if($api["username"] == ""){
             die("<br><br>User does not exsist. Perhaps they deleted their account?");
         }
-        $locale = $conn -> real_escape_string(xss($_SERVER["HTTP_CF_IPCOUNTRY"])); // MUST HAVE CLOUDFLARE
+        //$locale = $conn -> real_escape_string(xss($_SERVER["HTTP_CF_IPCOUNTRY"])); // MUST HAVE CLOUDFLARE
+        $locale = "US"; // debug
         $sql = "INSERT INTO reports (discord_id, reporter_discord_id, reporter_discord_username, cat, details, epoch, locale) VALUES ('${discord_id}', '${reporter_id}', '${reporter_username}', '${cat}', '${details}', '${epoch}', '${locale}')";
         $result = $conn->query($sql);
         header("Location: /check?id=${discord_id}");
