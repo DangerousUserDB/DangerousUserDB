@@ -45,6 +45,8 @@ $result = $conn->query($sql);
 <script src="https://hcaptcha.com/1/api.js" async defer></script>
 <h2>File a Report</h2>
 <?php
+echo "<!-- DEBUG INFO  " . $_SERVER["HTTP_CF_IPCOUNTRY"] . "-->";
+
 if(! $_SESSION["discord_username"]){
   echo "<br>Reporting as Anonymous. Sign in for benefits like an API key!"; //die("<h2>Please sign in to report!</h2>");
 }else{
