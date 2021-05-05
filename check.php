@@ -95,7 +95,7 @@ $times = count($timez);
 
 if($times == "0"){
     if($api["username"] == ""){
-        die(header("Location: /?notfound=true"));
+        die("Rats, we couldn't find that user. Please search for a user ID (example: 466262009256869889). You can get that by doing this:<br><img src='https://cdn.riverside.rocks/a/bagpipe-firewall-wolfsbane.gif' /><br><img src='https://cdn.riverside.rocks/a/puffin-english-iris.gif' /><br>");
     }
     $symbol = '<i class="fas fa-check-circle fa-5x" style="color:green;font-size:18px;"></i>'; 
     $message = "All clear! Nothing looks wrong!";
