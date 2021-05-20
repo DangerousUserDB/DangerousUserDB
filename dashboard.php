@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
       $count = $count + 1;
       $t = $row["epoch"];
-      echo "<tr>";
+      echo "<br><tr>";
 echo "<th>" . $row["reporter_discord_username"] . "</th>";
 echo "<td><span class='badge badge-danger'>" . $row["cat"] . "</span></td>";
 echo "<td>" . $row["details"] . "</td>";
