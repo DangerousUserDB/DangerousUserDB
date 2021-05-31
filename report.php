@@ -92,6 +92,21 @@ if(! $_SESSION["discord_username"]){
   <input class="btn btn-primary" type="submit" value="Submit">
 </form>
 <?php
+if (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) $_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_CF_CONNECTING_IP'];
+// I don't often copy + paste, but when I do..
+// http://www.inanzzz.com/index.php/post/swf8/converting-string-to-binary-and-binary-to-string-with-php
+function strigToBinary($string)
+{
+    $characters = str_split($string);
+ 
+    $binary = [];
+    foreach ($characters as $character) {
+        $data = unpack('H*', $character);
+        $binary[] = base_convert($data[1], 16, 2);
+    }
+ 
+    return implode(' ', $binary);    
+}
 if(isset($_POST["id"])){
     /******************
     Anti Spam Crap
@@ -116,7 +131,7 @@ if(isset($_POST["id"])){
         if(isset($_SESSION["discord_id"])){
           $reporter_id = $conn -> real_escape_string(xss($_SESSION["discord_id"]));
         }else{
-          $reporter_id = "0";
+          $reporter_id = strigToBinary($_SERVER['REMOTE_ADDR']);
         }
         if($_SESSION["discord_username"] == ""){
           $reporter_username = "Anonymous";
