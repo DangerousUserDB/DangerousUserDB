@@ -111,10 +111,12 @@ if ($result->num_rows > 0) {
        echo "<th><a href='/check?id=" . htmlspecialchars($row["discord_id"]) . "&ref=homepage'>" . htmlspecialchars($row["discord_id"]) . "</a></th>";
     }
 }
+        
         ?>
         </tr>
         </tbody>
     </table>
+    <a href="/reports">View more recent reports</a>
 </center>
 <?php
 include "includes/footer.php";
