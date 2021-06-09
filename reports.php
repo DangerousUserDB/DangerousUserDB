@@ -28,7 +28,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+?>
+<!-- making google happy -->
+<style>
+    a{
+        font-family: 18px;
+    }
+</style>
+<?php
 $sql = "SELECT * FROM reports ORDER BY epoch DESC";
 $result = $conn->query($sql);
 
@@ -37,6 +44,6 @@ $r2 = array();
 echo "<br><h1>Recent Reports</h1>";
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<br><a href='/check?id=" . $row["discord_id"] . "'>" . $row["discord_id"] . "</a>";
+        echo "<br><br><a href='/check?id=" . $row["discord_id"] . "'>" . $row["discord_id"] . "</a>";
     }
 }
