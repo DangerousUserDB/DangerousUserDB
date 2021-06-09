@@ -56,6 +56,7 @@ echo $font_awesome_kit;
 <meta name="keywords" content="discord, database">
 <meta name="robots" content="index, follow">
 <meta name="language" content="EN">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <?php
 if(!isset($_COOKIE["bot"])){
