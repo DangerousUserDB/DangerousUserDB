@@ -34,9 +34,9 @@ $result = $conn->query($sql);
 
 $r = array();
 $r2 = array();
-
+echo "<br><h1>Recent Reports</h1>";
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<br><a href='/check?id='" . $row["discord_id"] . ">" . $row["discord_id"] . "</a>";
+        echo "<br><a href='/check?id='" . $row["discord_id"] . "'>" . $row["discord_id"] . "</a>";
     }
 }
