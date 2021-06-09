@@ -29,7 +29,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM reports";
+$sql = "SELECT * FROM reports ORDER BY epoch DESC";
 $result = $conn->query($sql);
 
 $r = array();
