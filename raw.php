@@ -31,24 +31,27 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM reports LIMIT 1000";
+$sql = "SELECT * FROM reports";
 $result = $conn->query($sql);
 
 $r = array();
 $r2 = array();
-
+$r3 = array();
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $reported = $row["discord_id"];
         $reason = $row["details"];
+        $author_id = $row["reporter_discord_id"]
         array_push($r, $reported);
         array_push($r2, $reason);
+        array_push($r3, $author_id);
     }
 }
 
 $final = array(
         "id" => $r,
-        "details" => $r2
+        "details" => $r2,
+        "reporter_id" => $r3
     );
 
 echo json_encode($final, true);
