@@ -41,10 +41,10 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $reported = $row["discord_id"];
         $reason = $row["details"];
-        $author_id = $row["reporter_discord_id"]
+        $reporter_id = $row["reporter_discord_id"]
         array_push($r, $reported);
         array_push($r2, $reason);
-        array_push($r3, $author_id);
+        array_push($r3, $reporter_id);
     }
 }
 
