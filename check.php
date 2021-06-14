@@ -45,7 +45,7 @@ $time = time();
 $sql = "INSERT INTO `log`(`discord_username`, `epoch`) VALUES ('${reporter_username}', '${time}')";
 $result = $conn->query($sql);
 
-$id = $_GET["id"];
+$id = trim($_GET["id"]);
 $discord_token = $_ENV['BOT_TOKEN'];
 
 
