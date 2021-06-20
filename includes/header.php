@@ -48,8 +48,8 @@ function createTitleFromURI($uri){
 <head>
 <?php
 echo $font_awesome_kit;
-  if($titleid){
-    echo "<title>${titleid} - Dangerous User Database</title>";
+  if($r_discord_username){
+    echo "<title>${r_discord_username} - Dangerous User Database</title>";
   }else{
   echo "<title>" . createTitleFromURI($_SERVER['REQUEST_URI']) . " - Dangerous User Database</title>";
   }
