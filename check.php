@@ -117,8 +117,6 @@ if($times == "0"){
         <?php
     }
 }
-
-$titleid = $r_discord_username;
     echo "<br>";
     if($api["username"] !== ""){
         echo "<h2>User Profile - ${r_discord_username}</h2>";
