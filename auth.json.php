@@ -34,7 +34,7 @@ if ($conn->connect_error) {
 
 $key = $_GET["key"];
 
-$post_key = $conn -> real_escape_string(xss($key));
+$post_key = $conn -> real_escape_string(htmlspecialchars($key));
 
 $sql = "SELECT * FROM keysa WHERE keya='${post_key}'";
     $result = $conn->query($sql);
