@@ -1,6 +1,6 @@
 <?php
 /*======================================================================
-Copyright 2020, Riverside Rocks and the DUDB Authors
+Copyright 2021, Riverside Rocks and the DUDB Authors
 Licensed under the the Apache License v2.0 (the "License")
 You may get a copy at
 https://apache.org/licenses/LICENSE-2.0.txt
@@ -10,6 +10,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ========================================================================*/
+
+
+header("Content-type: application/json");
+header("Access-Control-Allow-Origin: *");
 
 include "includes/apis.php";
 
